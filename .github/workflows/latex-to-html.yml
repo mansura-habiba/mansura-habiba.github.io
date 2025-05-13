@@ -13,12 +13,12 @@ jobs:
         run: sudo apt-get install pandoc
 
       - name: Convert LaTeX to HTML
-        run: pandoc cv.tex -o index.html
+        run: pandoc cv.tex -o cv.html
 
       - name: Commit and push changes
         run: |
-          git config --global user.email "mansura.habiba@gmail..com"
+          git config --global user.email "mansura.habiba@gmail.com"
           git config --global user.name "Mansura Habiba"
-          git add index.html
+          git add cv.html
           git commit -m "Update HTML CV from LaTeX"
           git push
