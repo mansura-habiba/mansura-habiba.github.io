@@ -18,7 +18,7 @@ jobs:
       - name: Commit and push changes
         run: |
           git config --global user.email "mansura.habiba@gmail.com"
-          git config --global user.name "Mansura Habiba"
+          git config --global user.name "mansura-habiba"
           git add cv.html
           git commit -m "Update HTML CV from LaTeX"
           git push
