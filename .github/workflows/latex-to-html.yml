@@ -7,18 +7,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Pandoc
-        run: sudo apt-get install pandoc
+        run: sudo apt-get install -y pandoc
 
       - name: Convert LaTeX to HTML
         run: pandoc cv.tex -o cv.html
 
       - name: Commit and push changes
+        env:
+          TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git config --global user.email "mansura.habiba@gmail.com"
           git config --global user.name "mansura-habiba"
-          git add cv.html
-          git commit -m "Update HTML CV from LaTeX"
-          git push
+          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}
+          git add cv.html || true
+          git diff --cached --quiet || (git commit -m "Update HTML CV from LaTeX" && git push)
