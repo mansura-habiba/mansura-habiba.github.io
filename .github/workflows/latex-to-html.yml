@@ -26,8 +26,6 @@ jobs:
         env:
           TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          git config --global user.email "mansura.habiba@gmail.com"
-          git config --global user.name "mansura-habiba"
           git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}
           git add cv.html || true
           git diff --cached --quiet || (git commit -m "Update HTML CV from LaTeX" && git push)
