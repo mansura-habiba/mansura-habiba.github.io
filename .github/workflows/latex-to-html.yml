@@ -13,12 +13,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      # Step 1: Check out GitHub repository
+      - name: Checkout GitHub repository
+        uses: actions/checkout@v2
+        with:
+          ref: main  # Always checkout the main branch
+          fetch-depth: 0  # Fetch the full history to avoid shallow clone issues
 
+      # Step 2: Set up Git for GitHub authentication
+      - name: Set up Git for GitHub
+        run: |
+          git config user.name "GitHub Action"
+      
+      #  Step 3: Install Pandoc
       - name: Set up Pandoc
-        run: sudo apt-get install -y pandoc
-
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc 
       - name: Convert LaTeX to HTML
         run: pandoc cv.tex -o cv.html
 
