@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Blog
+title: Blogs
 description: Blog posts by Mansura Habiba on AI security, agentic systems, hybrid cloud, and HPC architecture.
 sidebar: false
 aside: false

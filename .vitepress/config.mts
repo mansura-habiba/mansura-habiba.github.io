@@ -68,7 +68,7 @@ export default withMermaid(defineConfig({
     logo: undefined,
 
     nav: [
-      { text: 'Blog', link: '/blog/', activeMatch: '^/blog/' },
+      { text: 'Blogs', link: '/blog/', activeMatch: '^/blog/' },
       { text: 'Books', link: '/book', activeMatch: '^/book' },
       { text: 'Publications', link: '/publications', activeMatch: '^/publications' },
       { text: 'About', link: '/about', activeMatch: '^/about' },
