@@ -1,7 +1,9 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+// Wrapped with withMermaid so fenced ```mermaid blocks render as diagrams.
+export default withMermaid(defineConfig({
   title: 'Mansura Habiba',
   description:
     'Personal site for Mansura Habiba, Ph.D. — Principal Platform Architect for AI and HPC platforms. Writing on agentic AI security, hybrid cloud, and HPC architecture.',
@@ -104,4 +106,23 @@ export default defineConfig({
       provider: 'local',
     },
   },
-})
+
+  // ---- Mermaid options (vitepress-plugin-mermaid) -----------------
+  // The plugin auto-detects light/dark and applies the correct theme.
+  // We set base colours to teal so diagrams match the rest of the site.
+  mermaid: {
+    theme: 'default',
+    themeVariables: {
+      primaryColor: '#cdf2ee',
+      primaryTextColor: '#1f2826',
+      primaryBorderColor: '#0aaa9f',
+      lineColor: '#3a4544',
+      secondaryColor: '#e8f8f6',
+      tertiaryColor: '#fafdfd',
+    },
+    securityLevel: 'loose',
+  },
+  mermaidPlugin: {
+    class: 'mermaid mansura-mermaid', // applied to the rendered <div>
+  },
+}))
