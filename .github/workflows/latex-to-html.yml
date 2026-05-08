@@ -30,13 +30,17 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y pandoc 
+      # Pandoc reads cv.tex from public/ (where it lives so VitePress copies
+      # it through as a static asset) and writes a plain-HTML fallback to
+      # public/cv-print.html, which is also served as a static asset.
+      # cv.html (the styled portfolio CV) is NEVER overwritten.
       - name: Convert LaTeX to HTML
-        run: pandoc cv.tex -o cv.html
+        run: pandoc public/cv.tex -o public/cv-print.html
 
       - name: Commit and push changes
         env:
           TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}
-          git add cv.html || true
-          git diff --cached --quiet || (git commit -m "Update HTML CV from LaTeX" && git push)
+          git add public/cv-print.html || true
+          git diff --cached --quiet || (git commit -m "Update plain-HTML CV from LaTeX" && git push)

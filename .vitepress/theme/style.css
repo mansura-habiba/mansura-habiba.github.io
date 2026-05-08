@@ -1,0 +1,615 @@
+/* =====================================================================
+ * Mansura Habiba — VitePress theme overrides
+ * Teal palette pulled from the original CV (--hue: 173).
+ * VitePress exposes a set of CSS variables; we override the brand
+ * colours, fonts, and a few layout values here.
+ * ===================================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  /* ---- brand (teal) ----------------------------------------------- */
+  --vp-c-brand-1: hsl(173, 95%, 32%);
+  --vp-c-brand-2: hsl(173, 95%, 38%);
+  --vp-c-brand-3: hsl(173, 95%, 45%);
+  --vp-c-brand-soft: hsl(173, 92%, 92%);
+  --vp-c-brand-light: hsl(173, 60%, 88%);
+
+  /* default-theme button colours */
+  --vp-button-brand-bg: var(--vp-c-brand-2);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-1);
+  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+  --vp-button-brand-border: var(--vp-c-brand-2);
+  --vp-button-brand-hover-border: var(--vp-c-brand-1);
+  --vp-button-brand-text: #fff;
+
+  /* fonts */
+  --vp-font-family-base: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --vp-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Courier New', monospace;
+  --vp-font-family-display: 'Lora', Georgia, 'Times New Roman', serif;
+
+  /* layout */
+  --vp-layout-max-width: 1280px;
+  /* Note: VitePress hardcodes .content max-width to 688px in v1.x; we
+     override it below per-page class so landing-style pages can breathe. */
+  --vp-content-max-width: 1100px;
+
+  /* hero gradient — teal accent */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, hsl(173, 95%, 38%), hsl(193, 80%, 45%));
+  --vp-home-hero-image-background-image: linear-gradient(135deg, hsl(173, 92%, 88%), hsl(173, 95%, 75%));
+  --vp-home-hero-image-filter: blur(40px);
+}
+
+.dark {
+  --vp-c-brand-1: hsl(173, 80%, 60%);
+  --vp-c-brand-2: hsl(173, 80%, 55%);
+  --vp-c-brand-3: hsl(173, 80%, 50%);
+  --vp-c-brand-soft: hsl(173, 50%, 18%);
+}
+
+/* =====================================================================
+ * Layout width — kill the 688px content cap on landing pages.
+ *
+ * VitePress 1.x hardcodes `.VPDoc:not(.has-sidebar) .content` to 688px,
+ * which leaves wide empty gutters on a portfolio site. We loosen that
+ * here, then re-narrow it specifically on blog post pages where running
+ * a measure that wide hurts readability.
+ * ===================================================================*/
+
+/* ---- VPPage (layout: page) — used by home, about, blog index, book, publications */
+.VPPage {
+  width: 100%;
+  max-width: var(--vp-layout-max-width);
+  margin: 0 auto;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+}
+
+/* `.vp-doc` is VitePress's content typography wrapper. Default max-width
+   is 688px, which is too narrow for a portfolio landing page. */
+.VPPage .vp-doc {
+  max-width: 100% !important;
+}
+
+/* ---- VPDoc (blog posts) — keep body text narrower for readability ---- */
+.VPDoc:not(.has-sidebar) .container {
+  max-width: var(--vp-layout-max-width) !important;
+}
+
+.VPDoc:not(.has-sidebar) .content {
+  max-width: 100% !important;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+/* Constrain just the prose text inside a blog post — not the page chrome */
+.VPDoc:not(.has-sidebar) .content .vp-doc {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hide the right-rail aside (we don't have an outline / TOC anyway) */
+.VPDoc:not(.has-sidebar) .aside,
+.VPDoc:not(.has-sidebar) .aside-container { display: none !important; }
+
+/* ---- Top nav: span the wider layout too --------------------- */
+.VPNavBar .container,
+.VPNavBar .content,
+.VPNavBar .content-body {
+  max-width: var(--vp-layout-max-width) !important;
+}
+
+/* ---- Responsive gutters — tighten as viewport narrows ------- */
+@media (max-width: 960px) {
+  .VPPage,
+  .VPDoc:not(.has-sidebar) .content {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+@media (max-width: 640px) {
+  .VPPage,
+  .VPDoc:not(.has-sidebar) .content {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+}
+
+/* ---- typography rhythm ------------------------------------------- */
+h1, h2, h3, h4, h5 {
+  font-family: var(--vp-font-family-display);
+  letter-spacing: -0.005em;
+}
+
+.VPDoc h1, .VPDoc h2, .VPDoc h3 {
+  font-family: var(--vp-font-family-display);
+}
+
+/* ---- top nav --------------------------------------------------- */
+.VPNavBarTitle .title {
+  font-family: var(--vp-font-family-display);
+  letter-spacing: -0.005em;
+}
+/* (Previously injected an "AI · HPC · CLOUD" tagline via ::after, but it
+   double-rendered across the desktop nav and the mobile local-nav, and the
+   home hero already carries that tagline — so the nav title stays clean.) */
+
+/* ---- shared section header pattern ----------------------------- */
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 3rem 0 1.4rem;
+  border-bottom: 1px solid var(--vp-c-divider);
+  padding-bottom: 0.7rem;
+}
+.section-header h2 {
+  margin: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  font-size: 1.55rem !important;
+}
+.section-header .see-all {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--vp-c-brand-1);
+}
+
+/* ---- Eyebrow used on page subtitles ----------------------------- */
+.page-eyebrow {
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  color: var(--vp-c-brand-1);
+  margin: 0 0 0.4rem;
+  font-weight: 600;
+}
+
+/* ===================================================================
+ * Home hero (HomeHero.vue)
+ * =================================================================*/
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) 1fr;
+  gap: 2.4rem;
+  align-items: center;
+  margin: 1.5rem 0 3rem;
+}
+.home-hero-photo {
+  aspect-ratio: 1 / 1;
+  background: var(--vp-c-brand-light);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.18);
+}
+.home-hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.home-hero-tagline {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: 0 0 0.4rem;
+}
+.home-hero h1 {
+  font-family: var(--vp-font-family-display);
+  font-size: 2.6rem;
+  line-height: 1.15;
+  margin: 0 0 0.7rem;
+  letter-spacing: -0.015em;
+}
+.home-hero p {
+  font-size: 1.05rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.65;
+}
+.home-hero-actions {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+@media (max-width: 720px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.4rem;
+  }
+  .home-hero-photo {
+    width: 200px;
+    margin: 0 auto;
+  }
+  .home-hero-actions {
+    justify-content: center;
+  }
+}
+
+/* ===================================================================
+ * Feature card (FeatureBook.vue)
+ * =================================================================*/
+.feature-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1.8rem;
+  align-items: center;
+  padding: 1.8rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  margin: 2.5rem 0;
+}
+.feature-card img {
+  border-radius: 6px;
+  box-shadow: 0 12px 30px -12px rgba(0, 0, 0, 0.25);
+}
+.feature-eyebrow {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+}
+.feature-card h3 {
+  font-family: var(--vp-font-family-display);
+  margin: 0 0 0.35rem;
+  font-size: 1.35rem;
+}
+.feature-meta {
+  color: var(--vp-c-text-2);
+  font-size: 0.92rem;
+  margin: 0 0 0.8rem;
+}
+@media (max-width: 640px) {
+  .feature-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .feature-card img {
+    max-width: 160px;
+    margin: 0 auto;
+  }
+}
+
+/* ===================================================================
+ * Buttons (use VitePress's built-in .VPButton via <a class="vp-button"> )
+ * =================================================================*/
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: all 0.15s ease;
+  line-height: 1.2;
+}
+.btn-primary {
+  background: var(--vp-c-brand-2);
+  color: #fff !important;
+}
+.btn-primary:hover {
+  background: var(--vp-c-brand-1);
+  transform: translateY(-1px);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--vp-c-text-1) !important;
+  border-color: var(--vp-c-divider);
+}
+.btn-ghost:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* ===================================================================
+ * Post list (PostList.vue) and post cards
+ * =================================================================*/
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.post-list-item {
+  border-bottom: 1px solid var(--vp-c-divider);
+  padding: 1.4rem 0;
+}
+.post-list-item:first-child { padding-top: 0; }
+.post-list-item:last-child { border-bottom: 0; }
+.post-list-item h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.3rem;
+  font-family: var(--vp-font-family-display);
+}
+.post-list-item h3 a {
+  color: var(--vp-c-text-1);
+  text-decoration: none !important;
+}
+.post-list-item h3 a:hover { color: var(--vp-c-brand-1); }
+.post-meta {
+  font-size: 0.78rem;
+  color: var(--vp-c-text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 0.25rem;
+  font-weight: 500;
+}
+.post-excerpt {
+  margin: 0.4rem 0 0 !important;
+  color: var(--vp-c-text-2);
+}
+
+/* ===================================================================
+ * Card grid (BookGrid.vue and homepage section cards)
+ * =================================================================*/
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.4rem;
+  margin: 1.6rem 0;
+}
+.card {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+.card:hover {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 14px 30px -14px rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
+}
+.card.book-card { padding: 0; overflow: hidden; }
+.card.book-card .book-cover {
+  background: linear-gradient(135deg, var(--vp-c-brand-soft), var(--vp-c-bg-soft));
+  padding: 1.6rem 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+.card.book-card .book-cover img {
+  max-width: 150px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 12px 30px -12px rgba(0, 0, 0, 0.25);
+}
+.card.book-card .book-body { padding: 1.2rem 1.4rem 1.4rem; }
+.card.book-card h3 {
+  font-family: var(--vp-font-family-display);
+  font-size: 1.1rem;
+  margin: 0 0 0.35rem;
+  line-height: 1.3;
+}
+.card.book-card .publisher {
+  font-size: 0.85rem;
+  color: var(--vp-c-text-2);
+  margin: 0 0 0.7rem;
+}
+.card.book-card .book-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+}
+
+/* ===================================================================
+ * Book detail — used on /book to give each title a rich panel
+ * =================================================================*/
+.book-detail {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2.4rem;
+  align-items: start;
+  padding: 2.4rem 0;
+  border-top: 1px solid var(--vp-c-divider);
+}
+.book-detail:first-of-type { border-top: 0; padding-top: 1.4rem; }
+.book-detail-cover {
+  position: sticky;
+  top: 96px; /* clears the sticky nav */
+}
+.book-detail-cover img {
+  width: 100%;
+  max-width: 240px;
+  border-radius: 6px;
+  box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.28);
+}
+.book-detail-cover .book-detail-cta {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+}
+.book-detail-body h2 {
+  font-family: var(--vp-font-family-display);
+  margin: 0 0 0.4rem;
+  font-size: 1.65rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  border: 0;
+  padding: 0;
+}
+.book-detail-body .book-detail-publisher {
+  color: var(--vp-c-text-2);
+  font-size: 0.95rem;
+  margin: 0 0 0.5rem;
+}
+.book-detail-body .book-detail-tagline {
+  font-size: 1.05rem;
+  color: var(--vp-c-text-1);
+  font-style: italic;
+  margin: 0 0 1.4rem;
+  padding-left: 0.9rem;
+  border-left: 3px solid var(--vp-c-brand-1);
+}
+.book-detail-body h3 {
+  font-family: var(--vp-font-family-display);
+  font-size: 1.1rem;
+  margin: 1.6rem 0 0.5rem;
+  color: var(--vp-c-text-1);
+  border: 0;
+  padding: 0;
+}
+.book-detail-body ul { padding-left: 1.2rem; }
+.book-detail-body ul li { margin: 0.3rem 0; }
+.book-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+  font-size: 0.88rem;
+}
+.book-detail-meta .meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.8rem;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  border-radius: 999px;
+  font-weight: 500;
+  text-decoration: none !important;
+}
+.book-detail-meta .meta-pill:hover {
+  background: var(--vp-c-brand-1);
+  color: #fff;
+}
+
+/* "Latest" ribbon for the hero book */
+.book-detail.is-latest .book-detail-body::before {
+  content: 'Latest book';
+  display: inline-block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 760px) {
+  .book-detail {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+    text-align: left;
+  }
+  .book-detail-cover {
+    position: static;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  .book-detail-cover img { max-width: 200px; }
+}
+
+/* ---- Patent / publication tile (PatentGrid.vue) ----------------- */
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.9rem;
+  margin: 1rem 0 2rem;
+}
+.tile {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  background: var(--vp-c-bg);
+  transition: border-color 0.15s ease, background 0.15s ease;
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block;
+}
+.tile:hover {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-bg-soft);
+}
+.tile-id {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.82rem;
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+  display: block;
+}
+.tile-title {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--vp-c-text-1);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* ---- Numbered publication list ---------------------------------- */
+.pub-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2.5rem;
+  counter-reset: pub;
+}
+.pub-list > li {
+  position: relative;
+  padding: 0.9rem 0 0.9rem 2.6rem;
+  border-bottom: 1px solid var(--vp-c-divider);
+  counter-increment: pub;
+}
+.pub-list > li::before {
+  content: counter(pub);
+  position: absolute;
+  left: 0;
+  top: 1.05rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pub-list > li:last-child { border-bottom: 0; }
+.pub-meta {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  color: var(--vp-c-text-2);
+}
+
+/* ---- About-page bio block --------------------------------------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2.2rem;
+  align-items: start;
+  margin: 1rem 0 2.4rem;
+}
+.about-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--vp-c-brand-light);
+  overflow: hidden;
+  box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.18);
+}
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 700px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .about-photo { margin: 0 auto; }
+}
