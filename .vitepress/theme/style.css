@@ -585,6 +585,79 @@ h1, h2, h3, h4, h5 {
   color: var(--vp-c-text-2);
 }
 
+/* ---- Featured paper card ---------------------------------------- */
+.paper-feature {
+  display: grid;
+  grid-template-columns: minmax(260px, 420px) 1fr;
+  gap: 1.6rem;
+  margin: 1rem 0 2.4rem;
+  align-items: center;
+}
+.paper-feature-list {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2.3rem;
+}
+.paper-feature-no-image {
+  grid-template-columns: 1fr;
+  margin: 0;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 1.15rem 1.2rem;
+  background: var(--vp-c-bg-soft);
+}
+.paper-feature-image {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--vp-c-bg-soft);
+}
+.paper-feature-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.paper-feature-body h3 {
+  margin: 0.3rem 0 0.35rem;
+  border: 0;
+  padding: 0;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+.paper-feature-body h3 a {
+  color: #8f2a2a;
+  text-decoration: none !important;
+}
+.paper-feature-body h3 a:hover {
+  color: #752020;
+}
+.paper-feature-meta {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--vp-c-text-2);
+}
+.paper-feature-authors {
+  margin: 0 0 0.7rem;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: var(--vp-c-text-2);
+}
+.paper-feature-summary {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+@media (max-width: 900px) {
+  .paper-feature {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .paper-feature-body h3 {
+    font-size: 1.3rem;
+  }
+}
+
 /* ---- About-page bio block --------------------------------------- */
 .about-grid {
   display: grid;

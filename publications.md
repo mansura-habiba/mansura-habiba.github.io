@@ -15,6 +15,85 @@ Peer-reviewed journals, conference papers, twelve filed patents, and selected ta
 
 A full and continuously updated list lives on [Google Scholar](https://scholar.google.com/citations?user=oee3rpwAAAAJ). This page mirrors the canonical list in the [CV](/cv.html).
 
+<div class="section-header" id="papers">
+  <h2>Papers</h2>
+  <span class="post-meta">Selected highlights</span>
+</div>
+
+<div class="paper-feature-list">
+  <article class="paper-feature paper-feature-no-image">
+    <div class="paper-feature-body">
+      <p class="paper-feature-meta">arXiv:2512.03180 · 2025</p>
+      <h3>
+        <a href="https://arxiv.org/abs/2512.03180" target="_blank" rel="noopener">
+          AGENTSAFE: A Unified Framework for Ethical Assurance and Governance in Agentic AI
+        </a>
+      </h3>
+      <p class="paper-feature-authors">
+        Rafflesia Khan, Declan Joyce, Mansura Habiba
+      </p>
+      <p class="paper-feature-summary">
+        Proposes an end-to-end governance framework for agentic AI with design-time controls,
+        runtime safeguards, and auditability mechanisms for measurable assurance.
+      </p>
+    </div>
+  </article>
+
+  <article class="paper-feature paper-feature-no-image">
+    <div class="paper-feature-body">
+      <p class="paper-feature-meta">arXiv:2508.01531 · 2025</p>
+      <h3>
+        <a href="https://arxiv.org/abs/2508.01531" target="_blank" rel="noopener">
+          Revisiting Gossip Protocols: A Vision for Emergent Coordination in Agentic Multi-Agent Systems
+        </a>
+      </h3>
+      <p class="paper-feature-authors">
+        Mansura Habiba, Nafiul I. Khan
+      </p>
+      <p class="paper-feature-summary">
+        Examines gossip as a decentralized coordination substrate for agent ecosystems and outlines
+        open research questions around trust, staleness, intent propagation, and semantic filtering.
+      </p>
+    </div>
+  </article>
+
+  <article class="paper-feature paper-feature-no-image">
+    <div class="paper-feature-body">
+      <p class="paper-feature-meta">arXiv:2409.09106 · 2024</p>
+      <h3>
+        <a href="https://arxiv.org/abs/2409.09106" target="_blank" rel="noopener">
+          Recent Trends in Modelling the Continuous Time Series using Deep Learning: A Survey
+        </a>
+      </h3>
+      <p class="paper-feature-authors">
+        Mansura Habiba, Barak A. Pearlmutter, Mehrdad Maleki
+      </p>
+      <p class="paper-feature-summary">
+        Surveys deep-learning approaches for continuous-time series, comparing model families,
+        limitations, and open challenges across real-world dynamic systems.
+      </p>
+    </div>
+  </article>
+
+  <article class="paper-feature paper-feature-no-image">
+    <div class="paper-feature-body">
+      <p class="paper-feature-meta">IEEE ISSC · 2020</p>
+      <h3>
+        <a href="https://ieeexplore.ieee.org/abstract/document/9180182/" target="_blank" rel="noopener">
+          Neural Ordinary Differential Equation based Recurrent Neural Network Model
+        </a>
+      </h3>
+      <p class="paper-feature-authors">
+        Mansura Habiba, B. M. Pearlmutter
+      </p>
+      <p class="paper-feature-summary">
+        Introduces a Neural ODE-based recurrent architecture for continuous-time sequence modeling,
+        aligning neural dynamics with irregularly sampled temporal data.
+      </p>
+    </div>
+  </article>
+</div>
+
 <div class="section-header" id="patents">
   <h2>Patents</h2>
   <span class="post-meta">12 filed · IBM</span>
