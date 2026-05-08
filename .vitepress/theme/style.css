@@ -626,11 +626,11 @@ h1, h2, h3, h4, h5 {
   line-height: 1.2;
 }
 .paper-feature-body h3 a {
-  color: #8f2a2a;
+  color: var(--vp-c-brand-1);
   text-decoration: none !important;
 }
 .paper-feature-body h3 a:hover {
-  color: #752020;
+  color: var(--vp-c-brand-2);
 }
 .paper-feature-meta {
   margin: 0;
