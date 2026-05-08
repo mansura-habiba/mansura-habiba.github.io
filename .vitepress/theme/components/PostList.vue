@@ -21,8 +21,8 @@ const visible = props.limit ? posts.slice(0, props.limit) : posts
       <p v-else-if="p.excerpt" class="post-excerpt">{{ p.excerpt }}</p>
     </li>
   </ol>
-  <p v-else>
-    Posts are on the way — the first ones will appear here as I move them in
-    from <a href="https://mansurahabiba.medium.com/" target="_blank" rel="noopener">Medium</a>.
+  <p v-else style="color: var(--vp-c-text-2);">
+    No posts yet. New writing will appear here — in the meantime,
+    <a href="https://mansurahabiba.medium.com/" target="_blank" rel="noopener">previous essays are on Medium</a>.
   </p>
 </template>
