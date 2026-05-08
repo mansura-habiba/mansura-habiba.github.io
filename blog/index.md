@@ -9,7 +9,7 @@ outline: false
 
 <p class="page-eyebrow">Writing</p>
 
-# Blog
+
 
 Notes on agentic AI security, hybrid cloud, and the architectural decisions that decide whether systems survive production.
 
