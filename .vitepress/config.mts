@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
+import mathjax3 from 'markdown-it-mathjax3'
 
 // https://vitepress.dev/reference/site-config
 // Wrapped with withMermaid so fenced ```mermaid blocks render as diagrams.
@@ -124,5 +125,10 @@ export default withMermaid(defineConfig({
   },
   mermaidPlugin: {
     class: 'mermaid mansura-mermaid', // applied to the rendered <div>
+  },
+  markdown: {
+    config: (md) => {
+      md.use(mathjax3)
+    },
   },
 }))
