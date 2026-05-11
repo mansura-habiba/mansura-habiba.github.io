@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Open Source Projects
-description: Open source by Mansura Habiba — autonomous-identity (agent identity envelopes), meetup talks, and more on GitHub.
+description: Open source by Mansura Habiba — autonomous-identity, HeunNet research notebooks, meetup talks, and more on GitHub.
 sidebar: false
 aside: false
 outline: false
@@ -25,6 +25,9 @@ Talk slides, demos, and other public repositories live on [GitHub](https://githu
     <p>The design targets eight governability properties together — persistence, addressability, cryptographic verifiability at exercise time, attenuating delegation, instance specificity, provenance binding, lifecycle control, and audit linkage — with pluggable <strong>IdentityAdapter</strong> implementations (for example SPIFFE-shaped envelopes and Merkle-chain histories) where each construction favors different trade-offs.</p>
     <p>Framework-free core types pair with storage backends (file, SQLite, Postgres) and append-only audit trails so verification and revocation stay visible across processes.</p>
     <p>Integrations and examples cover <strong>LangChain</strong>, <strong>LangGraph</strong>, <strong>A2A</strong>, Langflow, tracing (console and Langfuse), plus a small CLI — licensed under Apache-2.0.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://github.com/mansura-habiba/heunnet" target="_blank" rel="noopener">heunnet</a></strong> — Research artifacts for <em>HeunNet: Extending ResNet using Heun's Methods</em> (Maleki, Habiba, Pearlmutter): Jupyter notebooks and a <code>models</code> directory exploring Heun-type steps with ResNet-style training on MNIST and time-series data, including notebooks that compare against LSTM and phased-LSTM baselines.</p>
   </li>
   <li>
     <strong><a href="https://github.com/mansura-habiba/meetup" target="_blank" rel="noopener">meetup</a></strong>
