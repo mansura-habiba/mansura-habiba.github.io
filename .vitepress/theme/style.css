@@ -578,6 +578,13 @@ h1, h2, h3, h4, h5 {
   justify-content: center;
 }
 .pub-list > li:last-child { border-bottom: 0; }
+.pub-list > li > p {
+  margin: 0.45rem 0 0;
+  line-height: 1.55;
+}
+.pub-list > li > p:first-of-type {
+  margin-top: 0.35rem;
+}
 .pub-meta {
   display: block;
   margin-top: 0.3rem;

@@ -71,6 +71,7 @@ export default withMermaid(defineConfig({
       { text: 'Blogs', link: '/blog/', activeMatch: '^/blog/' },
       { text: 'Books', link: '/book', activeMatch: '^/book' },
       { text: 'Publications', link: '/publications', activeMatch: '^/publications' },
+      { text: 'Open Source Projects', link: '/open-source', activeMatch: '^/open-source' },
       { text: 'About', link: '/about', activeMatch: '^/about' },
       { text: 'CV', link: '/cv.html', target: '_self', noIcon: true },
     ],
