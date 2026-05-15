@@ -352,7 +352,7 @@ The receiver should not accept authority just because a credential verifies. It 
 
 ## How the autonomous-identity library implements the architecture
 
-The `autonomous-identity` library provides a reference architecture for this missing identity layer.
+The [`autonomous-identity`](https://github.com/mansura-habiba/autonomous-identity) library provides a reference architecture for this missing identity layer.
 
 It implements the identity-envelope pattern as a concrete runtime model for autonomous-system authority. The library is built around six components.
 
@@ -463,3 +463,5 @@ If it cannot, then it has authentication around autonomous behavior.
 The missing identity layer is the chain of custody between subject and action.
 
 That is what identity envelopes provide.
+
+> Check out [autonomous-identity](https://github.com/mansura-habiba/autonomous-identity)
