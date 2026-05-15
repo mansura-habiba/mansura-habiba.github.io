@@ -346,28 +346,6 @@ That is not enough for autonomous systems.
 
 When authority crosses a trust domain, the receiver needs to evaluate custody. It should ask whether the source trust domain is recognized, cross-domain delegation was explicit, the audience is allowed, the source scope translates into a receiver-local scope, the translated scope stays within delegated authority, revocation checks pass, the jurisdiction allows the action, and the decision can be audited.
 
-```mermaid
-flowchart TD
-    A[Federated Envelope] --> B[Receiver-Side Authority Verifier]
-
-    B --> C{Trusted Source Domain}
-    C --> D{Federation Caveat Present}
-    D --> E{Audience Allowed}
-    E --> F{Scope Mapping Exists}
-    F --> G{Authority Attenuated}
-    G --> H{Revocation Clear}
-    H --> I{Jurisdiction Allowed}
-
-    I --> J[Accept]
-    C --> K[Reject]
-    D --> K
-    E --> K
-    F --> K
-    G --> K
-    H --> K
-    I --> K
-```
-
 The receiver should not accept authority just because a credential verifies. It should accept authority only when the custody chain makes sense under receiver policy.
 
 ---
