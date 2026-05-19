@@ -1,7 +1,5 @@
 ---
-
-## title: When Code Gets Faster Than Engineering Discipline
-
+title: When Code Gets Faster Than Engineering Discipline
 subtitle: AI Coding Assistants Did Not Change Good Engineering. They Changed How Easily We Can Skip It Without Seeing the Cost.
 date: 2026-05-19
 categories: [agentic-ai, software development, SDLC, AI SDLC]
