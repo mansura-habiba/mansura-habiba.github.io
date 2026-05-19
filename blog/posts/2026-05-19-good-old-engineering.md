@@ -4,6 +4,8 @@ subtitle: AI Coding Assistants Did Not Change Good Engineering. They Changed How
 date: 2026-05-19
 categories: [agentic-ai, software development, SDLC, AI SDLC]
 ---
+> Note: This is a longer-than-usual research because the topic deserves it. It is not just about spec-driven development, coding assistants, or another framework. It is about what changed in software engineering when AI became a daily coding partner, what did not change at all, and why the real work now is to give the assistant the right mental model before it writes code. If you read only a few sections, read “What changed with coding assistants,” the part on sharing the team’s mental model, and the "summary of new best practices" near the end. If you stay till the end, I hope you walk away with something more practical than another AI coding opinion: a clearer way to make AI-assisted coding more trustworthy by giving the assistant better context, better boundaries, better evidence, and a human owner before code reaches production.
+
 This week I probably heard the phrase *spec-driven development* more than one hundred times.
 
 And honestly, I am glad we are talking about it.
