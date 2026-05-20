@@ -4,9 +4,17 @@ subtitle: AI Coding Assistants Did Not Change Good Engineering. They Changed How
 date: 2026-05-19
 categories: [agentic-ai, software development, SDLC, AI SDLC]
 ---
-> Note: This is a longer-than-usual research because the topic deserves it. It is not just about spec-driven development, coding assistants, or another framework. It is about what changed in software engineering when AI became a daily coding partner, what did not change at all, and why the real work now is to give the assistant the right mental model before it writes code. If you read only a few sections, read “What changed with coding assistants,” the part on sharing the team’s mental model, and the "summary of new best practices" near the end. If you stay till the end, I hope you walk away with something more practical than another AI coding opinion: a clearer way to make AI-assisted coding more trustworthy by giving the assistant better context, better boundaries, better evidence, and a human owner before code reaches production.
-
 # When Code Gets Faster Than Engineering Discipline
+
+<TldrCard title="TL;DR" read-time="~15 min · 4,200 words">
+
+- AI coding assistants did not change what good engineering looks like — they changed how easily we can skip it without seeing the cost.
+- The assistant does not carry the team's mental model by default. If it lives only in senior engineers' heads, the assistant will rebuild from a partial picture every session.
+- "Keep a human in the loop" at PR time is not enough. The volume of generated code is outrunning review capacity, and the cost of catching a wrong direction at PR is already high.
+- The real shift: quality has to be designed **into** the workflow — context before action, challenge before code, boundaries while building, evidence after building, and a human owner before shipping.
+- If you only read a few sections: **What changed with coding assistants**, **Sharing the team's mental model**, and the **summary of new best practices** at the end.
+
+</TldrCard>
 
 This week I probably heard the phrase *spec-driven development* more than one hundred times.
 
@@ -20,7 +28,9 @@ Because when we look closely, not everything changed.
 
 A messy function did not suddenly become beautiful because an AI wrote it. A duplicated helper did not stop being technical debt because it was generated in ten seconds. A weak test did not become stronger because the assistant explained it confidently. An unclear requirement did not magically become clear because we gave it to a model instead of a developer.
 
+<PullQuote>
 Good code is still good code. Bad code is still bad code.
+</PullQuote>
 
 These problems were not invented by AI.
 
@@ -29,6 +39,11 @@ We had them in the human-only software world as well. We had unclear requirement
 So the story is not that AI created a completely new world.
 
 The story is that AI added a new developer persona and changed the world's speed, scale, fragmentation, and trust model.
+
+<AnnotatedFigure
+  :number="1"
+  caption="Two software worlds, same engineering principles."
+  notice="The work didn't disappear — it moved. Hidden risk shifted left (into context) and review pressure shifted right (into PR overload).">
 
 ```mermaid
 flowchart LR
@@ -46,7 +61,7 @@ flowchart LR
     D2 -. pressure .-> H[Reviewer overload]
 ```
 
-
+</AnnotatedFigure>
 
 The point is not that one world was perfect and the other is broken. The point is that the work moved, the speed changed, and the trust assumptions changed.
 
@@ -118,6 +133,8 @@ flowchart TB
 
 This is the foundation of the whole argument.
 
+<PartDivider eyebrow="Part II" title="What changed when AI joined the team" />
+
 ## What changed with coding assistants
 
 The first change is that the developer is no longer the only producer of code. The developer becomes an instructor, reviewer, editor, and owner of code that may have been drafted by an assistant.
@@ -188,7 +205,15 @@ If we do not explicitly ask the assistant to challenge us, many assistants will 
 
 The sixth change is scale.
 
-The volume of generated code is growing faster than the human review capacity. This changes the economics of quality. In the past, a senior reviewer could often catch weak implementation patterns because the flow of code was human-paced. Now the reviewer may receive more code, more often, with less consistent style, and less reliable clues about how it was produced. I used so familiar with my team's coding that I knew which part was done by Kevin, which one is Jordi, which one is Guil, and which one is Hugo just by looking at the file and I am being honest, a certain pattern would already create trust as i look at those lines and my code review was simpler. Now I get "really innovative" code lines, I still can recognise it's our AI buddy, and I find myself asking "why" but often dont find the answer. So reviewing code is 10 times more difficult just because of the coding style alone; forget about the number of PRs increasing by 10 times.  
+The volume of generated code is growing faster than the human review capacity. This changes the economics of quality. In the past, a senior reviewer could often catch weak implementation patterns because the flow of code was human-paced. Now the reviewer may receive more code, more often, with less consistent style, and less reliable clues about how it was produced.
+
+<AsideNote variant="anecdote" title="From the bench">
+
+I used to be so familiar with my team's coding that I knew which part was Kevin's, which was Jordi's, which was Guil's, and which was Hugo's just by looking at the file. A certain pattern already created trust as I read those lines, and my code review was simpler.
+
+Now I get "really innovative" lines, I can still recognise it's our AI buddy, and I find myself asking "why" but often don't find the answer. Reviewing is ten times more difficult just because of the coding style alone — forget about the number of PRs increasing tenfold.
+
+</AsideNote>  
 
 So yes, the coding assistant changed the development workflow.
 
@@ -248,24 +273,33 @@ Not governance in the slow corporate sense. Governance in the engineering sense.
 
 These questions are becoming more important because AI increases the speed of action.
 
+<PullQuote attribution="The shift in one line">
 When action becomes faster, control has to move earlier.
+</PullQuote>
 
-```mermaid
-flowchart LR
-    A[Vague prompt] --> B[Fast implementation]
-    B --> C[Generated tests]
-    C --> D[Large pull request]
-    D --> E[Senior reviewer pressure]
-    E --> F[Late discovery of real issue]
+<BeforeAfter
+  title="Where the control point sits"
+  before-label="Vague prompt"
+  after-label="Clear spec + plan">
+  <template #before>
 
-    A2[Clear spec and plan] --> B2[Challenge before code]
-    B2 --> C2[Bounded implementation]
-    C2 --> D2[Tests mapped to cases]
-    D2 --> E2[Reviewer focuses on judgment]
-    E2 --> F2[Lower rework]
-```
+1. Fast implementation
+2. Generated tests
+3. Large pull request
+4. Senior reviewer pressure
+5. Late discovery of real issue
 
+  </template>
+  <template #after>
 
+1. Challenge before code
+2. Bounded implementation
+3. Tests mapped to cases
+4. Reviewer focuses on judgment
+5. Lower rework
+
+  </template>
+</BeforeAfter>
 
 The difference is not whether we use AI. The difference is where we place the control point.
 
@@ -293,7 +327,16 @@ A duplicated helper used to happen when one developer did not know another part 
 
 A stale architecture document used to mislead a new team member. Now it can mislead an assistant that confidently builds against obsolete information.
 
-A weak plan used to slow down a developer. The developer would ask questions, get blocked, or come back with something half-built. Now a weak plan can create a large implementation that looks polished. The assistant does not always stop because the idea is unclear. It often continues. It fills the gaps. It creates files. It creates tests. It creates explanations. Then the reviewer discovers that the work solved the literal request but not the real problem, and the pull request needs three review cycles to untangle.
+A weak plan used to slow down a developer. The developer would ask questions, get blocked, or come back with something half-built. Now a weak plan can create a large implementation that looks polished.
+
+<FailureMode
+  name="The polished weak plan"
+  severity="high"
+  symptom="A pull request that looks complete — code, tests, explanations — but solves the literal request, not the real problem."
+  cause="The assistant did not stop on ambiguity. It filled the gaps with reasonable-looking defaults and produced confident artifacts at every stage."
+  fix="Force a Challenge block before code. The plan must restate the problem, name non-goals, and call out what is still unknown. If the assistant can't, that's the signal — not a slower draft." />
+
+The assistant does not always stop because the idea is unclear. It often continues. It fills the gaps. It creates files. It creates tests. It creates explanations. Then the reviewer discovers that the work solved the literal request but not the real problem, and the pull request needs three review cycles to untangle.
 
 This is why the challenge is not simply code quality.
 
@@ -381,6 +424,22 @@ But in practice, it is so tough. Talk to any senior engineer in any organization
 
 The volume of generated code is increasing. The number of experienced reviewers is not increasing at the same speed. In many teams, senior engineers are already overloaded. If we expect humans to deeply verify every generated artifact at the end of the pipeline, we are turning human review into a bottleneck and then blaming the bottleneck when something slips through.
 
+<CrossIndustry
+  title="Why other industries stopped relying on end-of-line inspection"
+  from-label="Aviation, nuclear, healthcare"
+  to-label="AI-assisted software">
+  <template #from>
+
+A 747 is not made safe by a single inspector at the gate. Safety lives in pre-flight checklists, redundant signoffs, in-flight monitoring, and post-incident findings that feed back into training. Final review exists, but it is the last layer — not the only one.
+
+  </template>
+  <template #to>
+
+A pull request reviewed by a single overloaded senior is the same anti-pattern. Trust has to be built into the workflow: context loaded **before** planning, challenge **before** code, boundaries **while** building, evidence **after** building. The PR review is the last layer, not the only one.
+
+  </template>
+</CrossIndustry>
+
 The answer cannot be only more final review.
 
 By the time the pull request is large, the cost is already high. The code exists. The tests exist. The assistant has explained itself. The developer has spent time. Nobody wants to throw it away. This is how bad ideas become expensive. Not because anyone loved the bad idea, but because we allowed it to become too real before we challenged it. We are really not applying "Fail Fast" method anymore.
@@ -399,9 +458,11 @@ The known gotcha should not live only in someone’s memory. It should be record
 
 This is the shift.
 
-Quality cannot be only inspected at the end.
+<PullQuote attribution="The argument, compressed">
+Quality cannot be only inspected at the end. Quality has to be designed into the AI-assisted workflow from the beginning.
+</PullQuote>
 
-Quality has to be designed into the AI-assisted workflow from the beginning.
+<PartDivider eyebrow="Part III" title="Bringing engineering back" />
 
 ## Going back to good old principles
 
@@ -482,9 +543,53 @@ flowchart TB
 
 
 
+<StopAndAsk question="On your last AI-assisted change — could you defend the design, name the non-goals, and point to the acceptance case the test was proving?" />
+
 ## Summary: new best practices for AI-assisted coding
 
 So if I summarize the new practice, it is not that we need to invent software engineering again. We need to make the old good practices visible, explicit, and executable inside the AI-assisted workflow.
+
+<PrincipleList title="The six to start with">
+
+<Principle :number="1" title="Human-owned intent">
+
+Don't start from a vague prompt. Start from a clear task, capability, goal, scope, and expected outcome.
+
+</Principle>
+
+<Principle :number="2" title="Planning as engineering debate">
+
+The plan restates the problem, challenges the idea, compares alternatives, exposes risks, and names what's still unknown.
+
+</Principle>
+
+<Principle :number="3" title="Share the team's mental model">
+
+Coding standards, architecture context, reusable patterns, known gotchas, and risk boundaries belong in a place the assistant can load — not in senior heads.
+
+</Principle>
+
+<Principle :number="4" title="Bound AI authority">
+
+Every task declares what the assistant can touch, what it must not touch, and which behaviours must not change.
+
+</Principle>
+
+<Principle :number="5" title="Map tests to acceptance cases">
+
+Tests prove human-owned acceptance cases — negative, boundary, security, performance, failure — not the assistant's own implementation.
+
+</Principle>
+
+<Principle :number="6" title="Separate author and reviewer">
+
+The same assistant should not write, test, and approve its own work. Use a companion-style reviewer to recreate peer-programming challenge.
+
+</Principle>
+
+</PrincipleList>
+
+The full table below goes deeper — but if you start with these six, the rest follows.
 
 
 | New best practice                           | What it means in practice                                                                                                                                                                                                                                                                                                                                                                                         |

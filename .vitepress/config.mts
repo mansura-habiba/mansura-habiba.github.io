@@ -76,10 +76,16 @@ export default withMermaid(defineConfig({
       { text: 'CV', link: '/cv.html', target: '_self', noIcon: true },
     ],
 
-    // No sidebar — this is a portfolio, not docs.
+    // No left sidebar — this is a portfolio, not docs. But we keep the
+    // right rail (aside + outline) so long blog posts get a sticky
+    // "On this page" jump nav. Landing pages use the VPPage layout
+    // which has no aside, so they're unaffected.
     sidebar: false,
-    aside: false,
-    outline: false,
+    aside: true,
+    outline: {
+      level: [2, 3],
+      label: 'On this page',
+    },
     docFooter: { prev: false, next: false },
 
     socialLinks: [
