@@ -29,10 +29,12 @@
   --vp-font-family-display: 'Lora', Georgia, 'Times New Roman', serif;
 
   /* layout */
-  --vp-layout-max-width: 1280px;
+  --vp-layout-max-width: 1400px;
   /* Note: VitePress hardcodes .content max-width to 688px in v1.x; we
      override it below per-page class so landing-style pages can breathe. */
   --vp-content-max-width: 1100px;
+  --blog-prose-max-width: 920px;
+  --blog-prose-max-width-xl: 1000px;
 
   /* hero gradient — teal accent */
   --vp-home-hero-name-color: transparent;
@@ -72,14 +74,13 @@
   max-width: 100% !important;
 }
 
-/* ---- VPDoc (blog posts) — keep body text narrower for readability ----
+/* ---- VPDoc (blog posts) — wider prose + right-rail outline ------------
  *
- * Layout when the right-rail outline is enabled:
+ * Layout when the right-rail outline is enabled (1280px+):
  *
- *   |  padding |   prose 720px   |  gap  |  outline 224px  |  padding |
+ *   | pad | prose ~920px | gap | outline ~224px | pad |
  *
- * The outline is sticky; the prose stays left-anchored within its column.
- * On narrow screens (< 960px) VitePress collapses the aside automatically.
+ * The outline is sticky; prose uses more of the 1400px shell than before.
  * ----------------------------------------------------------------------*/
 .VPDoc:not(.has-sidebar) .container {
   max-width: var(--vp-layout-max-width) !important;
@@ -91,18 +92,80 @@
   padding-right: 32px;
 }
 
-/* Prose column — anchored left so the outline aside sits naturally on the right */
 .VPDoc:not(.has-sidebar) .content .vp-doc {
-  max-width: 760px;
+  width: 100%;
+  max-width: min(var(--blog-prose-max-width), 100%);
   margin-left: 0;
   margin-right: auto;
+  overflow-wrap: break-word;
 }
 
-/* When VitePress collapses the aside (narrow viewport), re-center the prose */
-@media (max-width: 1279px) {
+/* Media and code blocks stay inside the column */
+.VPDoc .vp-doc img,
+.VPDoc .vp-doc video,
+.VPDoc .vp-doc svg.mermaid {
+  max-width: 100%;
+  height: auto;
+}
+
+.VPDoc .vp-doc pre,
+.VPDoc .vp-doc div[class*='language-'] {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.VPDoc .vp-doc .mermaid {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 1440px) {
   .VPDoc:not(.has-sidebar) .content .vp-doc {
+    max-width: var(--blog-prose-max-width-xl);
+  }
+}
+
+/* Show outline from 960px (VitePress default hides it below 1280px) */
+@media (min-width: 960px) and (max-width: 1279px) {
+  .VPDoc:not(.has-sidebar) .VPDocAside {
+    display: block !important;
+  }
+
+  .VPDoc:not(.has-sidebar) .content-container {
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .VPDoc:not(.has-sidebar) .content .vp-doc {
+    max-width: min(720px, calc(100% - 252px));
+    margin-left: 0;
+    margin-right: 0;
+    flex: 1 1 auto;
+  }
+}
+
+/* Below 960px the aside collapses — use full content width */
+@media (max-width: 959px) {
+  .VPDoc:not(.has-sidebar) .content .vp-doc {
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+/* Tablet: slightly tighter blog typography */
+@media (max-width: 768px) {
+  .VPDoc .vp-doc h1 {
+    font-size: 1.85rem;
+  }
+
+  .VPDoc .vp-doc h2 {
+    font-size: 1.35rem;
+    margin-top: 2.2rem;
   }
 }
 

@@ -1,0 +1,1269 @@
+/* =====================================================================
+ * SDD++ page — use almost all space beside the outline (grids, SVGs)
+ * ===================================================================*/
+
+@media (min-width: 1280px) {
+  .sdd-plus-page.VPDoc:not(.has-sidebar) .content .vp-doc {
+    max-width: min(1120px, calc(100% - 280px));
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1440px) {
+  .sdd-plus-page.VPDoc:not(.has-sidebar) .content .vp-doc {
+    max-width: min(1180px, calc(100% - 300px));
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1279px) {
+  .sdd-plus-page.VPDoc:not(.has-sidebar) .content .vp-doc {
+    max-width: min(780px, calc(100% - 252px));
+  }
+}
+
+@media (max-width: 959px) {
+  .sdd-plus-page.VPDoc:not(.has-sidebar) .content .vp-doc {
+    max-width: 100%;
+  }
+}
+
+/* =====================================================================
+ * SDD++ — legend & badges in the intro TldrCard (outside .sdd-plus-page .vp-doc)
+ * ===================================================================*/
+
+.tldr-card .sdd-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin: 0.75rem 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+  color: var(--vp-c-text-1);
+}
+
+.tldr-card .sdd-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.tldr-card .legend-dot {
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+}
+
+.tldr-card .legend-dot.human { background: hsl(35, 85%, 58%); }
+.tldr-card .legend-dot.ai { background: var(--vp-c-brand-1); }
+.tldr-card .legend-dot.measure { background: hsl(265, 55%, 72%); }
+.tldr-card .legend-dot.gate { background: hsl(48, 90%, 58%); }
+
+.tldr-card .status-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.tldr-card .status {
+  display: inline-block;
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.65rem;
+  padding: 0.12rem 0.4rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  margin-right: 0.35rem;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.tldr-card .status.shipped {
+  background: hsl(140, 35%, 18%);
+  color: hsl(140, 50%, 62%);
+  border: 1px solid hsl(140, 35%, 30%);
+}
+
+.tldr-card .status.active {
+  background: hsl(48, 45%, 16%);
+  color: hsl(48, 90%, 58%);
+  border: 1px solid hsl(48, 40%, 32%);
+}
+
+.tldr-card .status.planned {
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  border: 1px solid hsl(173, 40%, 28%);
+}
+
+:root:not(.dark) .tldr-card .status.shipped {
+  background: hsl(140, 45%, 92%);
+  color: hsl(140, 45%, 28%);
+  border-color: hsl(140, 40%, 75%);
+}
+
+:root:not(.dark) .tldr-card .status.active {
+  background: hsl(48, 70%, 92%);
+  color: hsl(48, 55%, 28%);
+}
+
+/* =====================================================================
+ * SDD++ system overview — structural patterns inside a normal blog post
+ *
+ * Layout, typography, and chrome come from VitePress + style.css.
+ * This file only styles diagrams, cards, grids, and role colors.
+ * ===================================================================*/
+
+.sdd-plus-page .vp-doc {
+  /* Role colors (aliases keep inline var(--human) etc. working in HTML) */
+  --sdd-human: hsl(35, 85%, 58%);
+  --sdd-human-soft: hsl(35, 45%, 16%);
+  --sdd-ai: var(--vp-c-brand-1);
+  --sdd-ai-soft: var(--vp-c-brand-soft);
+  --sdd-measure: hsl(265, 55%, 72%);
+  --sdd-measure-soft: hsl(265, 35%, 16%);
+  --sdd-gate: hsl(48, 90%, 58%);
+  --sdd-gate-soft: hsl(48, 45%, 16%);
+  --sdd-pass: hsl(140, 45%, 52%);
+  --sdd-fail: hsl(0, 70%, 58%);
+  --human: var(--sdd-human);
+  --ai: var(--sdd-ai);
+  --measure: var(--sdd-measure);
+  --gate: var(--sdd-gate);
+  --human-soft: var(--sdd-human-soft);
+  --ai-soft: var(--sdd-ai-soft);
+  --measure-soft: var(--sdd-measure-soft);
+  --gate-soft: var(--sdd-gate-soft);
+  --pass: var(--sdd-pass);
+  --fail: var(--sdd-fail);
+  --surface: var(--vp-c-bg-soft);
+  --border: var(--vp-c-divider);
+  --border-strong: var(--vp-c-divider);
+  --text: var(--vp-c-text-1);
+  --text-muted: var(--vp-c-text-2);
+  --text-faint: var(--vp-c-text-3);
+  --mono: var(--vp-font-family-mono);
+}
+
+:root:not(.dark) .sdd-plus-page .vp-doc {
+  --sdd-human-soft: hsl(35, 70%, 93%);
+  --sdd-measure-soft: hsl(265, 40%, 94%);
+  --sdd-gate-soft: hsl(48, 70%, 92%);
+}
+
+.sdd-plus-page .vp-doc.blog-block,
+.sdd-plus-page .vp-doc {
+  margin: 0;
+}
+
+/* Lead paragraphs inside the doc block */
+.sdd-plus-page .vp-doc p.lead {
+  color: var(--vp-c-text-1);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.sdd-plus-page .vp-doc .annotation {
+  font-size: 0.88rem;
+  color: var(--vp-c-text-3);
+  font-style: italic;
+  margin-top: 0.35rem;
+}
+
+/* ---- Panels & grids ------------------------------------------------ */
+.sdd-plus-page .vp-doc .panel {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  margin: 1.4rem 0;
+}
+
+.sdd-plus-page .vp-doc .grid {
+  display: grid;
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+
+.sdd-plus-page .vp-doc .grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.sdd-plus-page .vp-doc .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.sdd-plus-page .vp-doc .grid.cols-6 { grid-template-columns: repeat(6, 1fr); }
+
+/* ---- Principle cards (align with .principle-chip rhythm) ---------- */
+.sdd-plus-page .vp-doc .principle {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  transition: border-color 0.15s ease;
+}
+
+.sdd-plus-page .vp-doc .principle:hover {
+  border-color: var(--vp-c-brand-1);
+}
+
+.sdd-plus-page .vp-doc .principle .num {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.72rem;
+  color: var(--vp-c-text-3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.sdd-plus-page .vp-doc .principle h3 {
+  margin: 0.25rem 0 0.4rem;
+  font-family: var(--vp-font-family-display);
+  font-size: 1.05rem;
+  color: var(--vp-c-text-1);
+}
+
+.sdd-plus-page .vp-doc .principle p {
+  font-size: 0.93rem;
+  margin: 0;
+  color: var(--vp-c-text-2);
+  line-height: 1.55;
+}
+
+.sdd-plus-page .vp-doc .principle.measurement {
+  background: var(--sdd-measure-soft);
+  border-color: hsl(265, 35%, 32%);
+}
+
+.sdd-plus-page .vp-doc .principle.measurement .num {
+  color: var(--sdd-measure);
+}
+
+/* ---- Knowledge layers (not folder trees) ------------------------- */
+.sdd-plus-page .vp-doc .sdd-layers {
+  align-items: stretch;
+}
+
+.sdd-plus-page .vp-doc .sdd-layer h3,
+.sdd-plus-page .vp-doc .sdd-layer-title {
+  margin: 0 0 0.5rem;
+  font-family: var(--vp-font-family-display);
+  font-size: 1.15rem;
+  color: var(--vp-c-text-1);
+}
+
+.sdd-plus-page .vp-doc .sdd-layer-eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+
+.sdd-plus-page .vp-doc .sdd-layer-global .sdd-layer-eyebrow {
+  color: var(--sdd-ai);
+}
+
+.sdd-plus-page .vp-doc .sdd-layer-project .sdd-layer-eyebrow {
+  color: var(--sdd-human);
+}
+
+.sdd-plus-page .vp-doc .sdd-layer-desc {
+  margin: 0 0 0.85rem;
+  font-size: 0.92rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.55;
+}
+
+.sdd-plus-page .vp-doc .sdd-artifacts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.sdd-plus-page .vp-doc .sdd-artifacts li {
+  font-size: 0.9rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.sdd-plus-page .vp-doc .sdd-artifacts li strong {
+  color: var(--vp-c-text-1);
+  font-weight: 600;
+}
+
+.sdd-plus-page .vp-doc .sdd-artifacts .badge {
+  margin-right: 0.35rem;
+  vertical-align: middle;
+}
+
+.sdd-plus-page .vp-doc .sdd-promotion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.sdd-plus-page .vp-doc .sdd-promotion-step {
+  font-size: 0.82rem;
+  color: var(--vp-c-text-2);
+}
+
+.sdd-plus-page .vp-doc .sdd-promotion-arrow {
+  color: var(--vp-c-text-3);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 720px) {
+  .sdd-plus-page .vp-doc .sdd-promotion {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .sdd-plus-page .vp-doc .sdd-promotion-arrow {
+    transform: rotate(90deg);
+    margin-left: 0.5rem;
+  }
+}
+
+/* ---- Legacy tree blocks (if any remain) -------------------------- */
+.sdd-plus-page .vp-doc .tree {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.82rem;
+  line-height: 1.75;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  white-space: pre;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.sdd-plus-page .vp-doc .tree .dir { color: var(--vp-c-text-1); font-weight: 600; }
+.sdd-plus-page .vp-doc .tree .file { color: var(--vp-c-text-2); }
+.sdd-plus-page .vp-doc .tree .comment { color: var(--vp-c-text-3); }
+.sdd-plus-page .vp-doc .tree .human-owned { color: var(--sdd-human); }
+.sdd-plus-page .vp-doc .tree .ai-may-suggest { color: var(--sdd-ai); }
+.sdd-plus-page .vp-doc .tree .measure-data { color: var(--sdd-measure); }
+.sdd-plus-page .vp-doc .tree .auto { color: var(--vp-c-text-3); font-style: italic; }
+
+/* ---- Workflow steps ------------------------------------------------ */
+.sdd-plus-page .vp-doc .workflow {
+  display: flex;
+  flex-direction: column;
+  margin: 1.2rem 0;
+}
+
+.sdd-plus-page .vp-doc .step {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr minmax(140px, 200px);
+  gap: 1rem;
+  align-items: start;
+  padding: 0.9rem 0;
+  border-bottom: 1px dashed var(--vp-c-divider);
+}
+
+.sdd-plus-page .vp-doc .step:last-child { border-bottom: none; }
+
+.sdd-plus-page .vp-doc .step .num-circle {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  background: var(--vp-c-bg);
+  border: 2px solid var(--vp-c-divider);
+}
+
+.sdd-plus-page .vp-doc .step.human .num-circle {
+  border-color: var(--sdd-human);
+  color: var(--sdd-human);
+}
+
+.sdd-plus-page .vp-doc .step.ai .num-circle {
+  border-color: var(--sdd-ai);
+  color: var(--sdd-ai);
+}
+
+.sdd-plus-page .vp-doc .step.both .num-circle {
+  border-color: var(--vp-c-text-2);
+  color: var(--vp-c-text-1);
+  background: linear-gradient(135deg, var(--sdd-human-soft) 50%, var(--sdd-ai-soft) 50%);
+}
+
+.sdd-plus-page .vp-doc .step.gate .num-circle {
+  border-color: var(--sdd-gate);
+  color: var(--sdd-gate);
+  background: var(--sdd-gate-soft);
+}
+
+.sdd-plus-page .vp-doc .step .body h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-family: var(--vp-font-family-display);
+}
+
+.sdd-plus-page .vp-doc .step .body p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--vp-c-text-2);
+}
+
+.sdd-plus-page .vp-doc .step .actor {
+  font-size: 0.78rem;
+  color: var(--vp-c-text-3);
+  padding-top: 0.35rem;
+}
+
+.sdd-plus-page .vp-doc .badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.68rem;
+  margin-right: 0.2rem;
+  margin-bottom: 0.15rem;
+}
+
+.sdd-plus-page .vp-doc .badge.human { background: var(--sdd-human-soft); color: var(--sdd-human); }
+.sdd-plus-page .vp-doc .badge.ai { background: var(--sdd-ai-soft); color: var(--sdd-ai); }
+.sdd-plus-page .vp-doc .badge.framework { background: var(--vp-c-bg); color: var(--vp-c-text-2); border: 1px solid var(--vp-c-divider); }
+.sdd-plus-page .vp-doc .badge.measure { background: var(--sdd-measure-soft); color: var(--sdd-measure); }
+.sdd-plus-page .vp-doc .badge.gate { background: var(--sdd-gate-soft); color: var(--sdd-gate); }
+
+/* ---- CI gate cards ----------------------------------------------- */
+.sdd-plus-page .vp-doc .gates {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .sdd-plus-page .vp-doc .gates { grid-template-columns: 1fr 1fr; }
+}
+
+.sdd-plus-page .vp-doc .gate-card {
+  background: var(--vp-c-bg-soft);
+  border: 1.5px solid var(--sdd-gate);
+  border-radius: 10px;
+  padding: 0.75rem 0.85rem;
+  position: relative;
+}
+
+.sdd-plus-page .vp-doc .gate-card::before {
+  content: '✓';
+  position: absolute;
+  top: 0.45rem;
+  right: 0.55rem;
+  color: var(--sdd-pass);
+  font-weight: 700;
+}
+
+.sdd-plus-page .vp-doc .gate-card .gate-num {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.65rem;
+  color: var(--sdd-gate);
+  letter-spacing: 0.12em;
+}
+
+.sdd-plus-page .vp-doc .gate-card h4 {
+  margin: 0.2rem 0 0.35rem;
+  font-size: 0.88rem;
+  color: var(--vp-c-text-1);
+}
+
+.sdd-plus-page .vp-doc .gate-card p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--vp-c-text-2);
+}
+
+/* ---- Measurement substrate --------------------------------------- */
+.sdd-plus-page .vp-doc .substrate {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+  .sdd-plus-page .vp-doc .substrate { grid-template-columns: 1fr; }
+}
+
+.sdd-plus-page .vp-doc .substrate-mech {
+  background: var(--sdd-measure-soft);
+  border: 1px solid hsl(265, 30%, 32%);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.sdd-plus-page .vp-doc .substrate-mech h3 {
+  margin: 0 0 0.35rem;
+  color: var(--sdd-measure);
+  font-size: 0.95rem;
+}
+
+.sdd-plus-page .vp-doc .substrate-mech p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: var(--vp-c-text-1);
+}
+
+.sdd-plus-page .vp-doc .substrate-mech .data {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.72rem;
+  color: var(--sdd-measure);
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed hsl(265, 30%, 32%);
+}
+
+.sdd-plus-page .vp-doc .net-velocity {
+  background: var(--vp-c-brand-soft);
+  border: 1px solid var(--vp-c-brand-1);
+  color: var(--vp-c-text-1);
+  padding: 1.1rem 1.4rem;
+  border-radius: 10px;
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.sdd-plus-page .vp-doc .net-velocity .label {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--vp-c-brand-1);
+  margin-bottom: 0.5rem;
+}
+
+.sdd-plus-page .vp-doc .net-velocity .formula {
+  font-size: 1rem;
+}
+
+/* ---- Wiki flow, MCP, tables ---------------------------------------- */
+.sdd-plus-page .vp-doc .wiki-flow {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .sdd-plus-page .vp-doc .wiki-flow { grid-template-columns: 1fr; }
+  .sdd-plus-page .vp-doc .wiki-arrow { transform: rotate(90deg); padding: 0.5rem 0; }
+}
+
+.sdd-plus-page .vp-doc .wiki-node {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.sdd-plus-page .vp-doc .wiki-node .label {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.68rem;
+  color: var(--vp-c-text-3);
+}
+
+.sdd-plus-page .vp-doc .wiki-node .name {
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin: 0.2rem 0;
+  color: var(--vp-c-text-1);
+}
+
+.sdd-plus-page .vp-doc .wiki-node .who {
+  font-size: 0.78rem;
+  color: var(--vp-c-text-2);
+}
+
+.sdd-plus-page .vp-doc .wiki-arrow {
+  text-align: center;
+  color: var(--vp-c-text-3);
+  font-size: 1.1rem;
+}
+
+.sdd-plus-page .vp-doc table.matrix,
+.sdd-plus-page .vp-doc .modes-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1rem 0;
+  font-size: 0.88rem;
+}
+
+.sdd-plus-page .vp-doc table.matrix th,
+.sdd-plus-page .vp-doc table.matrix td,
+.sdd-plus-page .vp-doc .modes-table th,
+.sdd-plus-page .vp-doc .modes-table td {
+  padding: 0.55rem 0.85rem;
+  text-align: left;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.sdd-plus-page .vp-doc table.matrix th,
+.sdd-plus-page .vp-doc .modes-table th {
+  background: var(--vp-c-bg);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--vp-c-text-2);
+}
+
+.sdd-plus-page .vp-doc table.matrix tr:last-child td,
+.sdd-plus-page .vp-doc .modes-table tr:last-child td {
+  border-bottom: none;
+}
+
+.sdd-plus-page .vp-doc table.matrix .can { color: var(--sdd-pass); font-weight: 700; }
+.sdd-plus-page .vp-doc table.matrix .cannot { color: var(--sdd-fail); font-weight: 700; }
+.sdd-plus-page .vp-doc table.matrix .partial { color: var(--sdd-gate); font-weight: 700; }
+.sdd-plus-page .vp-doc .modes-table .mode-human { color: var(--sdd-human); font-weight: 600; }
+.sdd-plus-page .vp-doc .modes-table .mode-auto { color: var(--sdd-measure); font-weight: 600; }
+.sdd-plus-page .vp-doc .modes-table .mode-conditional { color: var(--sdd-gate); font-weight: 600; }
+
+.sdd-plus-page .vp-doc .mcp-diagram {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .sdd-plus-page .vp-doc .mcp-diagram { grid-template-columns: 1fr; }
+  .sdd-plus-page .vp-doc .mcp-arrow svg { transform: rotate(90deg); }
+}
+
+.sdd-plus-page .vp-doc .mcp-node {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.sdd-plus-page .vp-doc .mcp-node.ai {
+  border-color: var(--sdd-ai);
+  background: var(--sdd-ai-soft);
+}
+
+.sdd-plus-page .vp-doc .mcp-node.repo {
+  border-color: var(--sdd-human);
+  background: var(--sdd-human-soft);
+}
+
+.sdd-plus-page .vp-doc .mcp-node h4 {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  color: var(--vp-c-text-1);
+}
+
+.sdd-plus-page .vp-doc .mcp-node p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--vp-c-text-2);
+}
+
+.sdd-plus-page .vp-doc .mcp-tools {
+  background: var(--vp-c-bg-soft);
+  border: 1px dashed var(--vp-c-divider);
+  border-radius: 10px;
+  padding: 0.75rem;
+  margin-top: 1rem;
+}
+
+.sdd-plus-page .vp-doc .mcp-tools .tool {
+  display: inline-block;
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.78rem;
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  padding: 0.2rem 0.45rem;
+  margin: 0.15rem;
+  border-radius: 4px;
+  color: var(--vp-c-text-1);
+}
+
+.sdd-plus-page .vp-doc .mcp-tools .tool.no-accept {
+  background: hsl(0, 40%, 18%);
+  color: var(--sdd-fail);
+  text-decoration: line-through;
+  border-color: hsl(0, 40%, 28%);
+}
+
+/* ---- SVG diagrams — remap legacy light fills for dark theme -------- */
+.sdd-plus-page .vp-doc .svg-wrap,
+.sdd-plus-page .vp-doc .iter-loop {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.sdd-plus-page .vp-doc .iter-loop .iter-caption {
+  font-size: 0.88rem;
+  color: var(--vp-c-text-2);
+  font-style: italic;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.dark .sdd-plus-page .vp-doc .svg-wrap svg [fill="#FFFFFF"],
+.dark .sdd-plus-page .vp-doc .svg-wrap svg [fill="#FAFAF7"],
+.dark .sdd-plus-page .vp-doc .svg-wrap svg [fill="#F2F0E9"],
+.dark .sdd-plus-page .vp-doc .iter-loop svg [fill="#FFFFFF"],
+.dark .sdd-plus-page .vp-doc .iter-loop svg [fill="#FAFAF7"] {
+  fill: var(--vp-c-bg-soft);
+}
+
+.dark .sdd-plus-page .vp-doc .svg-wrap svg [fill="#1A1A1A"],
+.dark .sdd-plus-page .vp-doc .svg-wrap svg [stroke="#1A1A1A"] {
+  fill: var(--vp-c-text-1);
+  stroke: var(--vp-c-text-1);
+}
+
+.dark .sdd-plus-page .vp-doc .svg-wrap svg [fill="#5C5C5C"],
+.dark .sdd-plus-page .vp-doc .svg-wrap svg [fill="#8A8780"] {
+  fill: var(--vp-c-text-2);
+}
+
+.dark .sdd-plus-page .vp-doc .svg-wrap svg [stroke="#E8E5DE"],
+.dark .sdd-plus-page .vp-doc .svg-wrap svg [stroke="#C9C5BD"] {
+  stroke: var(--vp-c-divider);
+}
+
+/* ---- Status badges ------------------------------------------------ */
+.sdd-plus-page .vp-doc .status {
+  display: inline-block;
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.65rem;
+  padding: 0.12rem 0.4rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+  margin-right: 0.35rem;
+  font-weight: 600;
+}
+
+.sdd-plus-page .vp-doc .status.shipped {
+  background: hsl(140, 35%, 18%);
+  color: hsl(140, 50%, 62%);
+  border: 1px solid hsl(140, 35%, 30%);
+}
+
+.sdd-plus-page .vp-doc .status.active {
+  background: var(--sdd-gate-soft);
+  color: var(--sdd-gate);
+  border: 1px solid hsl(48, 40%, 32%);
+}
+
+.sdd-plus-page .vp-doc .status.planned {
+  background: var(--sdd-ai-soft);
+  color: var(--sdd-ai);
+  border: 1px solid hsl(173, 40%, 28%);
+}
+
+.sdd-plus-page .vp-doc .status-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  font-size: 0.88rem;
+  color: var(--vp-c-text-2);
+}
+
+/* ---- Legend dots (intro card) -------------------------------------- */
+.sdd-plus-page .vp-doc .legend-dot {
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.sdd-plus-page .vp-doc .legend-dot.human { background: var(--sdd-human); }
+.sdd-plus-page .vp-doc .legend-dot.ai { background: var(--sdd-ai); }
+.sdd-plus-page .vp-doc .legend-dot.measure { background: var(--sdd-measure); }
+.sdd-plus-page .vp-doc .legend-dot.gate { background: var(--sdd-gate); }
+
+.sdd-plus-page .vp-doc .sdd-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.88rem;
+  color: var(--vp-c-text-2);
+}
+
+.sdd-plus-page .vp-doc .sdd-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+/* ---- Timeline, wiki map, phases ------------------------------------ */
+.sdd-plus-page .vp-doc .tl-row {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--vp-c-divider);
+}
+
+.sdd-plus-page .vp-doc .tl-row:last-child { border-bottom: none; }
+
+.sdd-plus-page .vp-doc .tl-when {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.72rem;
+  color: var(--vp-c-text-3);
+}
+
+.sdd-plus-page .vp-doc .tl-when.active { color: var(--sdd-gate); font-weight: 600; }
+.sdd-plus-page .vp-doc .tl-when.merge { color: var(--sdd-measure); font-weight: 600; }
+
+.sdd-plus-page .vp-doc .tl-event h4 {
+  margin: 0 0 0.25rem;
+  font-size: 0.92rem;
+  color: var(--vp-c-text-1);
+}
+
+.sdd-plus-page .vp-doc .tl-event p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--vp-c-text-2);
+}
+
+.sdd-plus-page .vp-doc .wiki-map {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+
+@media (max-width: 900px) {
+  .sdd-plus-page .vp-doc .wiki-map {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sdd-plus-page .vp-doc .wiki-side.reads {
+  border-left: 3px solid var(--sdd-ai);
+  padding-left: 1rem;
+}
+
+.sdd-plus-page .vp-doc .wiki-side.writes {
+  border-left: 3px solid var(--sdd-human);
+  padding-left: 1rem;
+}
+
+.sdd-plus-page .vp-doc .wiki-side-title {
+  margin: 0 0 0.75rem;
+  font-family: var(--vp-font-family-display);
+  font-size: 1.05rem;
+}
+
+.sdd-plus-page .vp-doc .wiki-side-title-ai {
+  color: var(--sdd-ai);
+}
+
+.sdd-plus-page .vp-doc .wiki-side-title-human {
+  color: var(--sdd-human);
+}
+
+.sdd-plus-page .vp-doc .sdd-wiki-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.9rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+}
+
+.sdd-plus-page .vp-doc .sdd-wiki-list li {
+  margin: 0.35rem 0;
+}
+
+.sdd-plus-page .vp-doc .sdd-wiki-list strong {
+  color: var(--vp-c-text-1);
+}
+
+.sdd-plus-page .vp-doc .wiki-side .label {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.68rem;
+  color: var(--vp-c-text-3);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.sdd-plus-page .vp-doc .wiki-side .item {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+  margin-bottom: 0.35rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+}
+
+.sdd-plus-page .vp-doc .wiki-side .item .path {
+  font-family: var(--vp-font-family-mono);
+  color: var(--vp-c-text-1);
+}
+
+.sdd-plus-page .vp-doc .wiki-side .item .via {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.65rem;
+  color: var(--vp-c-text-3);
+}
+
+.sdd-plus-page .vp-doc .wiki-side .item-desc {
+  font-size: 0.68rem;
+  color: var(--vp-c-text-3);
+  margin-top: 0.15rem;
+}
+
+.sdd-plus-page .vp-doc .wiki-side-subtitle {
+  margin: 0.85rem 0 0.5rem;
+  font-family: var(--vp-font-family-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--vp-c-text-2);
+}
+
+.sdd-plus-page .vp-doc .wiki-side .item-forbidden {
+  background: hsl(0, 35%, 14%);
+  border-color: hsl(0, 35%, 28%);
+}
+
+:root:not(.dark) .sdd-plus-page .vp-doc .wiki-side .item-forbidden {
+  background: hsl(0, 60%, 96%);
+  border-color: hsl(0, 45%, 85%);
+}
+
+.sdd-plus-page .vp-doc .wiki-side .item-forbidden .path {
+  text-decoration: line-through;
+  color: var(--vp-c-text-3);
+}
+
+.sdd-plus-page .vp-doc .wiki-side .via-refused {
+  color: var(--sdd-fail);
+  font-weight: 600;
+}
+
+.sdd-plus-page .vp-doc .phase-ribbon {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+  margin: 1rem 0 1.4rem;
+}
+
+@media (max-width: 900px) {
+  .sdd-plus-page .vp-doc .phase-ribbon { grid-template-columns: repeat(2, 1fr); }
+  .sdd-plus-page .vp-doc .phase-chip::after { content: ''; }
+}
+
+.sdd-plus-page .vp-doc .phase-chip {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 0.55rem 0.4rem;
+  text-align: center;
+  position: relative;
+}
+
+.sdd-plus-page .vp-doc .phase-chip::after {
+  content: '→';
+  position: absolute;
+  right: -0.55rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--vp-c-text-3);
+  font-size: 0.85rem;
+  z-index: 1;
+}
+
+.sdd-plus-page .vp-doc .phase-chip:last-child::after { content: '↻'; }
+
+.sdd-plus-page .vp-doc .phase-chip .phase-num {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.62rem;
+  color: var(--vp-c-text-3);
+  letter-spacing: 0.1em;
+}
+
+.sdd-plus-page .vp-doc .phase-chip .phase-name {
+  font-weight: 700;
+  font-size: 0.78rem;
+  margin-top: 0.1rem;
+  color: var(--vp-c-text-1);
+}
+
+.sdd-plus-page .vp-doc .phase-chip .phase-steps {
+  font-size: 0.65rem;
+  color: var(--vp-c-text-2);
+  margin-top: 0.2rem;
+  font-family: var(--vp-font-family-mono);
+}
+
+.sdd-plus-page .vp-doc .phase-block {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  margin-bottom: 0.85rem;
+  overflow: hidden;
+}
+
+.sdd-plus-page .vp-doc .phase-header {
+  background: var(--vp-c-bg);
+  padding: 0.55rem 1rem;
+  border-bottom: 1px solid var(--vp-c-divider);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.sdd-plus-page .vp-doc .phase-header .ph-num {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.68rem;
+  color: var(--vp-c-text-3);
+  letter-spacing: 0.1em;
+}
+
+.sdd-plus-page .vp-doc .phase-header .ph-name {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--vp-c-text-1);
+}
+
+.sdd-plus-page .vp-doc .phase-header .ph-desc {
+  font-size: 0.82rem;
+  color: var(--vp-c-text-2);
+  margin-left: auto;
+  font-style: italic;
+}
+
+.sdd-plus-page .vp-doc .phase-block .phase-body {
+  background: var(--vp-c-bg-soft);
+  padding: 0.2rem 1rem;
+}
+
+.sdd-plus-page .vp-doc .modes-callout {
+  background: var(--sdd-measure-soft);
+  border-left: 3px solid var(--sdd-measure);
+  padding: 0.65rem 0.9rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.92rem;
+  color: var(--vp-c-text-1);
+}
+
+.sdd-plus-page .vp-doc .modes-callout strong {
+  color: var(--sdd-measure);
+}
+
+.sdd-plus-page .vp-doc footer.doc-source {
+  margin-top: 3rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--vp-c-divider);
+  font-size: 0.82rem;
+  color: var(--vp-c-text-3);
+}
+
+.sdd-plus-page .vp-doc footer.doc-source a {
+  color: var(--vp-c-brand-1);
+}
+
+@media (max-width: 720px) {
+  .sdd-plus-page .vp-doc .step {
+    grid-template-columns: 2.5rem 1fr;
+  }
+  .sdd-plus-page .vp-doc .step .actor {
+    grid-column: 2;
+  }
+}
+
+/* =====================================================================
+ * Responsive — SDD++ diagrams, grids, tables (mobile & tablet)
+ * ===================================================================*/
+
+/* Large tablet: 3-col grids → 2 cols */
+@media (max-width: 1100px) {
+  .sdd-plus-page .vp-doc .grid.cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sdd-plus-page .vp-doc .grid.cols-6 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .sdd-plus-page .vp-doc .grid.cols-2,
+  .sdd-plus-page .vp-doc .grid.cols-3,
+  .sdd-plus-page .vp-doc .grid.cols-6 {
+    grid-template-columns: 1fr;
+  }
+
+  .sdd-plus-page .vp-doc .gates {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .sdd-plus-page .vp-doc .panel {
+    padding: 1rem 1.05rem;
+  }
+
+  .sdd-plus-page .vp-doc .phase-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .sdd-plus-page .vp-doc .phase-header .ph-desc {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /* Scrollable tables on narrow screens */
+  .sdd-plus-page .vp-doc table.matrix,
+  .sdd-plus-page .vp-doc .modes-table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sdd-plus-page .vp-doc table.matrix thead,
+  .sdd-plus-page .vp-doc table.matrix tbody,
+  .sdd-plus-page .vp-doc .modes-table thead,
+  .sdd-plus-page .vp-doc .modes-table tbody {
+    display: table;
+    width: 100%;
+    min-width: 520px;
+  }
+
+  .sdd-plus-page .vp-doc table.matrix th,
+  .sdd-plus-page .vp-doc table.matrix td,
+  .sdd-plus-page .vp-doc .modes-table th,
+  .sdd-plus-page .vp-doc .modes-table td {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.55rem;
+  }
+
+  .sdd-plus-page .vp-doc .svg-wrap,
+  .sdd-plus-page .vp-doc .iter-loop {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .sdd-plus-page .vp-doc .svg-wrap svg,
+  .sdd-plus-page .vp-doc .iter-loop svg {
+    display: block;
+    max-width: none;
+    min-width: 560px;
+    height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .sdd-plus-page .vp-doc p.lead {
+    font-size: 0.98rem;
+  }
+
+  .sdd-plus-page .vp-doc .gates {
+    grid-template-columns: 1fr;
+  }
+
+  .sdd-plus-page .vp-doc .phase-ribbon {
+    grid-template-columns: 1fr;
+  }
+
+  .sdd-plus-page .vp-doc .phase-chip::after {
+    content: '';
+  }
+
+  .sdd-plus-page .vp-doc .wiki-side .item {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .sdd-plus-page .vp-doc .wiki-side .item .via {
+    justify-self: start;
+  }
+
+  .sdd-plus-page .vp-doc .mcp-diagram {
+    grid-template-columns: 1fr;
+  }
+
+  .sdd-plus-page .vp-doc .mcp-arrow {
+    padding: 0.25rem 0;
+  }
+
+  .sdd-plus-page .vp-doc .mcp-arrow svg {
+    transform: rotate(90deg);
+    margin: 0 auto;
+  }
+
+  .sdd-plus-page .vp-doc .net-velocity .formula {
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .sdd-plus-page .vp-doc .tl-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .sdd-plus-page .vp-doc .tree {
+    font-size: 0.75rem;
+    padding: 0.75rem 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sdd-plus-page .vp-doc .step {
+    grid-template-columns: 2.25rem 1fr;
+    gap: 0.65rem;
+    padding: 0.75rem 0;
+  }
+
+  .sdd-plus-page .vp-doc .step .actor {
+    grid-column: 2;
+    padding-top: 0.15rem;
+  }
+
+  .sdd-plus-page .vp-doc .badge {
+    font-size: 0.62rem;
+  }
+
+  .sdd-plus-page .vp-doc .sdd-artifacts li {
+    font-size: 0.85rem;
+  }
+}

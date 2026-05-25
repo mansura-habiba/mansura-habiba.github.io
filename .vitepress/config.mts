@@ -1,6 +1,56 @@
+import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
 import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 import mathjax3 from 'markdown-it-mathjax3'
+
+/** Match VitePress markdown heading anchor ids on this site */
+function slugify(title: string): string {
+  const slug = title
+    .trim()
+    .toLowerCase()
+    .replace(/[(),]/g, '')
+    .replace(/\./g, '-')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-+|-+$/g, '')
+  return `_${slug}`
+}
+
+type OutlineHeader = {
+  level: number
+  title: string
+  slug: string
+  children?: OutlineHeader[]
+}
+
+function extractMarkdownHeaders(markdown: string): OutlineHeader[] {
+  const headers: OutlineHeader[] = []
+  let currentH2: OutlineHeader | null = null
+
+  for (const line of markdown.split('\n')) {
+    const h2 = line.match(/^## (.+)$/)
+    const h3 = line.match(/^### (.+)$/)
+    if (h2) {
+      currentH2 = {
+        level: 2,
+        title: h2[1].trim(),
+        slug: slugify(h2[1]),
+        children: [],
+      }
+      headers.push(currentH2)
+    } else if (h3) {
+      const entry: OutlineHeader = {
+        level: 3,
+        title: h3[1].trim(),
+        slug: slugify(h3[1]),
+      }
+      if (currentH2?.children) currentH2.children.push(entry)
+      else headers.push(entry)
+    }
+  }
+  return headers
+}
 
 // https://vitepress.dev/reference/site-config
 // Wrapped with withMermaid so fenced ```mermaid blocks render as diagrams.
@@ -137,5 +187,19 @@ export default withMermaid(defineConfig({
     config: (md) => {
       md.use(mathjax3)
     },
+  },
+
+  // HTML-heavy posts don't populate headers[] automatically; inject for outline.
+  transformPageData(pageData) {
+    if (
+      pageData.relativePath !==
+      'blog/posts/2026-05-22-sdd-plus-system-overview.md'
+    ) {
+      return
+    }
+    const file = join(process.cwd(), pageData.filePath)
+    const raw = readFileSync(file, 'utf-8')
+    const body = raw.replace(/^---[\s\S]*?---\n?/, '')
+    pageData.headers = extractMarkdownHeaders(body)
   },
 }))
