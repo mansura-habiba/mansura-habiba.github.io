@@ -13,7 +13,7 @@ A guardrail model can classify a prompt. A guardrails harness must decide where 
 
 NVIDIA, AWS, Microsoft, Google and Meta are moving towards layered controls across input, context, output and tool use. Their approaches are stronger than regex alone, but they also introduce model, service, latency, privacy and operating dependencies.
 
-I started with a CPU-only reflex layer: canonicalisation, deobfuscation, deterministic rules, separate security and scope scores, and character/word TF-IDF with logistic regression. It is useful, local and explainable — but it is deliberately not presented as a complete defence.
+To avoid that latency and dependency cost, a different design pattern is useful: a **CPU-only reflex layer** — canonicalisation, deobfuscation, deterministic rules, separate security and scope scores, and character/word TF-IDF with logistic regression. The pattern is local and explainable. It is deliberately not a complete defence.
 
 </TldrCard>
 
@@ -212,7 +212,7 @@ One response would be to route every prompt to an external safety API. That impr
 
 Another response would be to pretend regex is enough. It is not.
 
-The design I implemented instead is a **CPU-only reflex layer**:
+The alternative is a **CPU-only reflex layer**:
 
 <AnnotatedFigure
   :number="4"
