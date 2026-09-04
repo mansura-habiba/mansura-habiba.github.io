@@ -1,11 +1,11 @@
 ---
-title: Let's not over-glorify guardrail models
+title: What do we know about Guardrails?
 subtitle: A classifier is not a security harness — AI guardrails need boundaries, policy, failure behaviour and evidence
 date: 2026-09-04
 categories: [agentic-ai, security, guardrails, enterprise]
 ---
 
-# Let's not over-glorify guardrail models: a classifier is not a security harness
+# What do we know about Guardrails?
 
 <TldrCard>
 
