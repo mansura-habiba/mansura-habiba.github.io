@@ -13,7 +13,7 @@ A guardrail model can classify a prompt. A guardrails harness must decide where 
 
 NVIDIA, AWS, Microsoft, Google and Meta are moving towards layered controls across input, context, output and tool use. Their approaches are stronger than regex alone, but they also introduce model, service, latency, privacy and operating dependencies.
 
-To avoid that latency and dependency cost, a different design pattern is useful: a **CPU-only reflex layer** — canonicalisation, deobfuscation, deterministic rules, separate security and scope scores, and character/word TF-IDF with logistic regression. The pattern is local and explainable. It is deliberately not a complete defence.
+To avoid that latency and dependency cost, a different design pattern is useful: a **CPU-only reflex layer**. The pattern recovers obfuscated text first, applies deterministic signature rules, extracts cheap structural features, optionally matches known attack fingerprints, then runs sparse character and word TF-IDF classifiers with logistic regression — keeping security risk separate from scope risk — and aggregates the evidence into PASS, SANITISE or BLOCK. It stays local and explainable, and it is deliberately not a complete defence.
 
 </TldrCard>
 
@@ -220,31 +220,35 @@ The alternative is a **CPU-only reflex layer**:
   notice="Each stage is local and CPU-first. The risk aggregator merges signature, structural, fingerprint and classifier evidence into PASS, SANITISE or BLOCK.">
 
 ```mermaid
-flowchart TB
-  IN[INPUT] --> CAN
+flowchart LR
+  IN[INPUT]
 
-  CAN["Canonicalization<br/>Unicode / homoglyph<br/>leet / spacing"]
-  CAN --> DEC
+  subgraph prep["1 · Preprocess"]
+    direction TB
+    CAN["Canonicalization<br/>Unicode / homoglyph<br/>leet / spacing"]
+    DEC["Decoder<br/>Base64 · URL · HEX · HTML"]
+    CAN --> DEC
+  end
 
-  DEC["Decoder<br/>Base64<br/>URL / HEX / HTML"]
-  DEC --> SIG
+  subgraph evidence["2 · Cheap evidence"]
+    direction TB
+    SIG["Signature Engine<br/>deterministic rules"]
+    STR["Structural Engine<br/>~20 cheap features"]
+    FP["Attack Fingerprint<br/>SimHash / MinHash"]
+    SIG --> STR --> FP
+  end
 
-  SIG["Signature Engine<br/>deterministic rules"]
-  SIG --> STR
+  subgraph decide["3 · Classify and decide"]
+    direction TB
+    CLS["Sparse Classifier<br/>char + word TF-IDF<br/>Logistic Regression"]
+    AGG[Risk Aggregator]
+    CLS --> AGG
+    AGG --> PASS[PASS]
+    AGG --> SAN[SANITISE]
+    AGG --> BLOCK[BLOCK]
+  end
 
-  STR["Structural Engine<br/>~20 cheap features"]
-  STR --> FP
-
-  FP["Attack Fingerprint<br/>SimHash / MinHash"]
-  FP --> CLS
-
-  CLS["Sparse Classifier<br/>char TF-IDF<br/>word TF-IDF<br/>Logistic Regression"]
-  CLS --> AGG
-
-  AGG[Risk Aggregator]
-  AGG --> PASS[PASS]
-  AGG --> SAN[SANITISE]
-  AGG --> BLOCK[BLOCK]
+  IN --> prep --> evidence --> decide
 ```
 
 </AnnotatedFigure>
@@ -351,19 +355,30 @@ The order of controls therefore matters:
   notice="An output filter after the side effect is too late. Authority must sit before tool execution.">
 
 ```mermaid
-flowchart TB
-  A[User input] --> B[Input guard]
-  B --> C[Context retrieval]
-  C --> D[Context guard]
-  D --> E[Reasoning and planning]
-  E --> F[Authority decision]
-  F --> G[Tool request]
-  G --> H[Execution guard]
-  H --> I[External side effect]
-  I --> J[Result guard]
-  J --> K[Model response]
-  K --> L[Output guard]
-  L --> M[User]
+flowchart LR
+  subgraph inbound["1 · Inbound"]
+    direction TB
+    A[User input] --> B[Input guard]
+    B --> C[Context retrieval]
+    C --> D[Context guard]
+  end
+
+  subgraph decide["2 · Decide and execute"]
+    direction TB
+    E[Reasoning and planning] --> F[Authority decision]
+    F --> G[Tool request]
+    G --> H[Execution guard]
+  end
+
+  subgraph outbound["3 · Outbound"]
+    direction TB
+    I[External side effect] --> J[Result guard]
+    J --> K[Model response]
+    K --> L[Output guard]
+    L --> M[User]
+  end
+
+  inbound --> decide --> outbound
 ```
 
 </AnnotatedFigure>
