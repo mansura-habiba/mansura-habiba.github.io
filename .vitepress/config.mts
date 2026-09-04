@@ -119,6 +119,7 @@ export default withMermaid(defineConfig({
 
     nav: [
       { text: 'Blogs', link: '/blog/', activeMatch: '^/blog/' },
+      { text: 'Topics', link: '/topics/', activeMatch: '^/topics/' },
       { text: 'Books', link: '/book', activeMatch: '^/book' },
       { text: 'Publications', link: '/publications', activeMatch: '^/publications' },
       { text: 'Open Source Projects', link: '/open-source', activeMatch: '^/open-source' },

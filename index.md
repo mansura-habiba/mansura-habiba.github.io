@@ -36,4 +36,8 @@ outline: false
     <h3 style="font-family: var(--vp-font-family-display); margin: 0 0 .4rem;">About</h3>
     <p style="margin: 0; color: var(--vp-c-text-2); font-size: .95rem;">A short bio, contact details, and a link to the full CV.</p>
   </a>
+  <a class="card" href="/topics/">
+    <h3 style="font-family: var(--vp-font-family-display); margin: 0 0 .4rem;">Topics</h3>
+    <p style="margin: 0; color: var(--vp-c-text-2); font-size: .95rem;">Focused reference collections — diagram, notes, and further reading per concept.</p>
+  </a>
 </div>

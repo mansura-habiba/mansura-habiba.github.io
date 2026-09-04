@@ -1,8 +1,19 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { data as posts } from '../posts.data'
 
-const props = defineProps<{ limit?: number }>()
-const visible = props.limit ? posts.slice(0, props.limit) : posts
+const props = defineProps<{
+  limit?: number
+  category?: string
+}>()
+
+const visible = computed(() => {
+  let list = props.category
+    ? posts.filter((p) => p.categories.includes(props.category!))
+    : posts
+  if (props.limit) list = list.slice(0, props.limit)
+  return list
+})
 </script>
 
 <template>
@@ -22,7 +33,12 @@ const visible = props.limit ? posts.slice(0, props.limit) : posts
     </li>
   </ol>
   <p v-else style="color: var(--vp-c-text-2);">
-    No posts yet. New writing will appear here — in the meantime,
-    <a href="https://mansurahabiba.medium.com/" target="_blank" rel="noopener">previous essays are on Medium</a>.
+    <template v-if="category">
+      No published pages in this topic yet.
+    </template>
+    <template v-else>
+      No posts yet. New writing will appear here — in the meantime,
+      <a href="https://mansurahabiba.medium.com/" target="_blank" rel="noopener">previous essays are on Medium</a>.
+    </template>
   </p>
 </template>

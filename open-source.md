@@ -11,29 +11,45 @@ outline: false
 
 # Open Source Projects
 
-Talk slides, demos, and other public repositories live on [GitHub](https://github.com/mansura-habiba). Highlights from this site's publications page:
+Talk slides, demos, and other public repositories live on [GitHub](https://github.com/mansura-habiba).
 
 <div class="section-header" id="repos">
   <h2>Repositories</h2>
   <span class="post-meta">Selected</span>
 </div>
 
-<ul class="pub-list">
-  <li>
-    <p><strong><a href="https://github.com/mansura-habiba/autonomous-identity" target="_blank" rel="noopener">autonomous-identity</a></strong> — Python library for <strong>identity at the moment of action</strong>: each tool call, state change, or delegation carries a portable <strong>identity envelope</strong> that describes who is acting, under what scopes, and with what provenance.</p>
-    <p>At every <strong>material exercise</strong>, the library re-verifies that envelope against the current lifecycle state, active grants, and a <strong>signed delegation chain</strong> anchored to a human, team, or organization.</p>
-    <p>The design targets eight governability properties together — persistence, addressability, cryptographic verifiability at exercise time, attenuating delegation, instance specificity, provenance binding, lifecycle control, and audit linkage — with pluggable <strong>IdentityAdapter</strong> implementations (for example SPIFFE-shaped envelopes and Merkle-chain histories) where each construction favors different trade-offs.</p>
-    <p>Framework-free core types pair with storage backends (file, SQLite, Postgres) and append-only audit trails so verification and revocation stay visible across processes.</p>
-    <p>Integrations and examples cover <strong>LangChain</strong>, <strong>LangGraph</strong>, <strong>A2A</strong>, <a href="https://github.com/langflow-ai/langflow" target="_blank" rel="noopener">Langflow</a>, tracing (console and Langfuse), plus a small CLI — licensed under Apache-2.0.</p>
-  </li>
-  <li>
-    <p><strong><a href="https://github.com/mansura-habiba/heunnet" target="_blank" rel="noopener">heunnet</a></strong> — Research artifacts for <em>HeunNet: Extending ResNet using Heun's Methods</em> (Maleki, Habiba, Pearlmutter): Jupyter notebooks and a <code>models</code> directory exploring Heun-type steps with ResNet-style training on MNIST and time-series data, including notebooks that compare against LSTM and phased-LSTM baselines.</p>
-  </li>
-  <li>
-    <strong><a href="https://github.com/mansura-habiba/meetup" target="_blank" rel="noopener">meetup</a></strong>
-    — Talk materials (e.g. PyLadies Dublin 2019, Node.js meetup Dublin).
-  </li>
-</ul>
+<OpenSourceGrid>
+  <OpenSourceCard
+    title="autonomous-identity"
+    href="https://github.com/mansura-habiba/autonomous-identity"
+    :lines="[
+      'Python library for identity at the moment of action — each tool call, state change, or delegation carries a portable identity envelope.',
+      'Re-verifies that envelope at every material exercise against lifecycle state, active grants, and a signed delegation chain.',
+      'Framework-free core with LangChain, LangGraph, A2A, Langflow, and tracing integrations — Apache-2.0.',
+    ]"
+    :tags="['python', 'library', 'identity', 'agents', 'langchain', 'langflow']"
+  />
+  <OpenSourceCard
+    title="heunnet"
+    href="https://github.com/mansura-habiba/heunnet"
+    :lines="[
+      'Research artifacts for HeunNet: extending ResNet using Heun\'s methods (Maleki, Habiba, Pearlmutter).',
+      'Jupyter notebooks and a models directory for MNIST and time-series experiments.',
+      'Includes comparisons against LSTM and phased-LSTM baselines.',
+    ]"
+    :tags="['python', 'neural network', 'jupyter', 'research', 'resnet']"
+  />
+  <OpenSourceCard
+    title="meetup"
+    href="https://github.com/mansura-habiba/meetup"
+    :lines="[
+      'Public talk slides and demo materials from community meetups.',
+      'Includes PyLadies Dublin 2019 and Node.js meetup Dublin sessions.',
+      'Lightweight repos meant for sharing code and examples from live talks.',
+    ]"
+    :tags="['talks', 'community', 'python', 'nodejs']"
+  />
+</OpenSourceGrid>
 
 <div class="section-header" id="contributing">
   <h2>Contributing to</h2>
@@ -42,11 +58,25 @@ Talk slides, demos, and other public repositories live on [GitHub](https://githu
 
 <p class="post-meta">Broader codebases where work shows up as components, examples, or patches inside upstream communities.</p>
 
-<ul class="pub-list">
-  <li>
-    <p><strong><a href="https://github.com/langflow-ai/langflow" target="_blank" rel="noopener">Langflow</a></strong> — Open-source visual builder for LLM and agent flows. Collaboration here focuses on custom components and wiring that bring exercise-time identity and delegation into Langflow graphs, aligned with the <a href="https://github.com/mansura-habiba/autonomous-identity" target="_blank" rel="noopener">autonomous-identity</a> Langflow integration path.</p>
-  </li>
-  <li>
-    <p><strong><a href="https://github.com/IBM/mcp-composer" target="_blank" rel="noopener">mcp-composer</a></strong> (<a href="https://github.com/IBM" target="_blank" rel="noopener">IBM</a>) — FastMCP-based orchestrator that registers multiple MCP servers and tools at runtime from structured JSON, forwards invocations to the right upstream MCP server or interface, and exposes a single MCP surface across OpenAPI, GraphQL, CLI tools, client SDKs, and nested MCP servers — Apache-2.0.</p>
-  </li>
-</ul>
+<OpenSourceGrid>
+  <OpenSourceCard
+    title="Langflow"
+    href="https://github.com/langflow-ai/langflow"
+    :lines="[
+      'Open-source visual builder for LLM and agent flows.',
+      'Collaboration focuses on custom components that bring exercise-time identity into Langflow graphs.',
+      'Aligned with the autonomous-identity Langflow integration path.',
+    ]"
+    :tags="['langflow', 'agents', 'identity', 'visual builder', 'upstream']"
+  />
+  <OpenSourceCard
+    title="mcp-composer"
+    href="https://github.com/IBM/mcp-composer"
+    :lines="[
+      'IBM FastMCP orchestrator — registers multiple MCP servers and tools at runtime from structured JSON.',
+      'Forwards invocations to the right upstream server and exposes a single MCP surface across OpenAPI, GraphQL, CLI, and SDKs.',
+      'Apache-2.0 upstream collaboration.',
+    ]"
+    :tags="['mcp', 'python', 'ibm', 'orchestration', 'upstream']"
+  />
+</OpenSourceGrid>

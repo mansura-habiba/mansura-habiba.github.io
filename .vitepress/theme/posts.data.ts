@@ -8,6 +8,7 @@ export interface Post {
   dateISO: string
   categories: string[]
   excerpt?: string
+  draft?: boolean
 }
 
 export default createContentLoader('blog/posts/*.md', {
@@ -35,8 +36,10 @@ export default createContentLoader('blog/posts/*.md', {
             ? [frontmatter.categories]
             : [],
           excerpt: excerpt?.replace(/<[^>]+>/g, '').slice(0, 240),
+          draft: Boolean(frontmatter.draft),
         }
       })
+      .filter((post) => !post.draft)
       .sort((a, b) => +new Date(b.dateISO) - +new Date(a.dateISO))
   },
 })

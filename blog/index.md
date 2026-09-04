@@ -13,6 +13,8 @@ outline: false
 
 Notes on agentic AI security, hybrid cloud, and the architectural decisions that decide whether systems survive production.
 
+For focused reference pages (diagram + notes layout), see **[Topics](/topics/)** — starting with [Quantum computing](/topics/quantum).
+
 <PostList />
 
 ---
