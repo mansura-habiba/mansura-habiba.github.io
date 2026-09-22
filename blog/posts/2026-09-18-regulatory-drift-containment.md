@@ -1,11 +1,11 @@
 ---
-title: The Certificate Is a Snapshot. Production Is a Path.
-subtitle: A Regulatory Drift Containment Protocol — treating behavioural change as a budgeted, provable quantity rather than a recertification cliff.
+title: Regulatory Drift Containment Protocol
+subtitle: The certificate is a snapshot. Production is a path — behavioural change as a budgeted, provable quantity rather than a recertification cliff.
 date: 2026-09-18
 categories: [ai-governance, certification, cryptography, information-theory]
 ---
 
-# The Certificate Is a Snapshot. Production Is a Path.
+# Regulatory Drift Containment Protocol
 
 <TldrCard title="TL;DR" read-time="~14 min">
 
