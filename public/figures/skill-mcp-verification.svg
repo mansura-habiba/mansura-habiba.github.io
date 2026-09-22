@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="17.5cm" height="17.41708cm" viewBox="0 0 661.417 658.283" role="img">
+  <title>Procedure, capability, and acceptance stay separate</title>
+  <defs>
+    <marker id="arrow-down" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#1E3A5F"/>
+    </marker>
+    <marker id="arrow-return" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#1E3A5F"/>
+    </marker>
+    <marker id="arrow-flow" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 Z" fill="#1E3A5F"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="661.42" height="658.28" fill="#FFFFFF"/>
+  <text x="330.71" y="82.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="16.000" font-weight="700">Procedure, capability, and acceptance stay separate</text>
+  <rect  x="66.14" y="98.14" width="499.13" height="78.00" rx="12" fill="#E8F1FC" stroke="#2B6CB0" stroke-width="2"/>
+  <g transform="translate(78.14 124.14)"><path fill="none" stroke="#2B6CB0" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" d="M5 8 H21 M5 13 H21 M5 18 H21"/><circle fill="none" stroke="#2B6CB0" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" cx="10" cy="8" r="2"/><circle fill="none" stroke="#2B6CB0" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" cx="16" cy="13" r="2"/><circle fill="none" stroke="#2B6CB0" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" cx="12" cy="18" r="2"/></g>
+  <text x="315.71" y="126.14" text-anchor="middle" fill="#2B6CB0" font-family="Arial, Helvetica, sans-serif" font-size="14.333" font-weight="700">Thin router</text>
+  <rect x="249.10" y="138.14" width="33.31" height="20.0" rx="8" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="1.4"/>
+  <text x="265.75" y="152.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Work</text>
+  <rect x="288.40" y="138.14" width="33.31" height="20.0" rx="8" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="1.4"/>
+  <text x="305.06" y="152.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Risk</text>
+  <rect x="327.71" y="138.14" width="54.61" height="20.0" rx="8" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="1.4"/>
+  <text x="355.02" y="152.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Artefact</text>
+  <line x1="315.71" y1="179.14" x2="315.71" y2="197.14" stroke="#1E3A5F" stroke-width="1.6" marker-end="url(#arrow-down)"/>
+  <rect  x="66.14" y="202.14" width="499.13" height="78.00" rx="12" fill="#F3EAF8" stroke="#6B3FA0" stroke-width="2"/>
+  <g transform="translate(78.14 228.14)"><rect fill="none" stroke="#6B3FA0" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" x="6" y="5" width="14" height="17" rx="2"/><path fill="none" stroke="#6B3FA0" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" d="M10 5 V4 H16 V5 M9 12 L12 15 L17 9"/></g>
+  <text x="315.71" y="230.14" text-anchor="middle" fill="#6B3FA0" font-family="Arial, Helvetica, sans-serif" font-size="14.333" font-weight="700">Skill (how)</text>
+  <rect x="213.46" y="242.14" width="70.59" height="20.0" rx="8" fill="#FFFFFF" stroke="#6B3FA0" stroke-width="1.4"/>
+  <text x="248.76" y="256.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Description</text>
+  <rect x="290.06" y="242.14" width="38.63" height="20.0" rx="8" fill="#FFFFFF" stroke="#6B3FA0" stroke-width="1.4"/>
+  <text x="309.37" y="256.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Steps</text>
+  <rect x="334.69" y="242.14" width="43.96" height="20.0" rx="8" fill="#FFFFFF" stroke="#6B3FA0" stroke-width="1.4"/>
+  <text x="356.67" y="256.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Rubric</text>
+  <rect x="384.65" y="242.14" width="33.31" height="20.0" rx="8" fill="#FFFFFF" stroke="#6B3FA0" stroke-width="1.4"/>
+  <text x="401.30" y="256.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Eval</text>
+  <line x1="315.71" y1="283.14" x2="315.71" y2="301.14" stroke="#1E3A5F" stroke-width="1.6" marker-end="url(#arrow-down)"/>
+  <rect  x="66.14" y="306.14" width="240.57" height="78.00" rx="12" fill="#E5F6F5" stroke="#1A7A78" stroke-width="2"/>
+  <g transform="translate(78.14 332.14)"><ellipse fill="none" stroke="#1A7A78" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" cx="13" cy="7" rx="7" ry="3"/><path fill="none" stroke="#1A7A78" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" d="M6 7 V17 C6 18.7 9.1 20 13 20 C16.9 20 20 18.7 20 17 V7"/><path fill="none" stroke="#1A7A78" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" d="M6 12 C6 13.7 9.1 15 13 15 C16.9 15 20 13.7 20 12"/></g>
+  <text x="186.43" y="334.14" text-anchor="middle" fill="#1A7A78" font-family="Arial, Helvetica, sans-serif" font-size="14.333" font-weight="700">MCP (what answers)</text>
+  <rect x="114.49" y="346.14" width="43.96" height="20.0" rx="8" fill="#FFFFFF" stroke="#1A7A78" stroke-width="1.4"/>
+  <text x="136.47" y="360.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Search</text>
+  <rect x="164.45" y="346.14" width="33.31" height="20.0" rx="8" fill="#FFFFFF" stroke="#1A7A78" stroke-width="1.4"/>
+  <text x="181.10" y="360.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Auth</text>
+  <rect x="203.75" y="346.14" width="54.61" height="20.0" rx="8" fill="#FFFFFF" stroke="#1A7A78" stroke-width="1.4"/>
+  <text x="231.06" y="360.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Metadata</text>
+  <rect  x="324.71" y="306.14" width="240.57" height="78.00" rx="12" fill="#E7F6EC" stroke="#2F7D4A" stroke-width="2"/>
+  <g transform="translate(336.71 332.14)"><rect fill="none" stroke="#2F7D4A" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" x="7" y="7" width="12" height="12" rx="2"/><path fill="none" stroke="#2F7D4A" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" d="M10 7 V4 M16 7 V4 M10 19 V22 M16 19 V22 M7 10 H4 M7 16 H4 M19 10 H22 M19 16 H22"/></g>
+  <text x="444.99" y="334.14" text-anchor="middle" fill="#2F7D4A" font-family="Arial, Helvetica, sans-serif" font-size="14.333" font-weight="700">Runtime</text>
+  <rect x="367.73" y="346.14" width="54.61" height="20.0" rx="8" fill="#FFFFFF" stroke="#2F7D4A" stroke-width="1.4"/>
+  <text x="395.03" y="360.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Worktree</text>
+  <rect x="428.34" y="346.14" width="38.63" height="20.0" rx="8" fill="#FFFFFF" stroke="#2F7D4A" stroke-width="1.4"/>
+  <text x="447.66" y="360.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Shell</text>
+  <rect x="472.97" y="346.14" width="49.29" height="20.0" rx="8" fill="#FFFFFF" stroke="#2F7D4A" stroke-width="1.4"/>
+  <text x="497.62" y="360.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Browser</text>
+  <line x1="186.43" y1="387.14" x2="186.43" y2="405.14" stroke="#1E3A5F" stroke-width="1.6" marker-end="url(#arrow-down)"/>
+  <line x1="444.99" y1="387.14" x2="444.99" y2="405.14" stroke="#1E3A5F" stroke-width="1.6" marker-end="url(#arrow-down)"/>
+  <rect  x="66.14" y="410.14" width="240.57" height="78.00" rx="12" fill="#FFF6E8" stroke="#C47B16" stroke-width="2"/>
+  <g transform="translate(78.14 436.14)"><path fill="none" stroke="#C47B16" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" d="M5 8 H21 M5 13 H21 M5 18 H21"/><circle fill="none" stroke="#C47B16" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" cx="10" cy="8" r="2"/><circle fill="none" stroke="#C47B16" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" cx="16" cy="13" r="2"/><circle fill="none" stroke="#C47B16" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" cx="12" cy="18" r="2"/></g>
+  <text x="186.43" y="438.14" text-anchor="middle" fill="#C47B16" font-family="Arial, Helvetica, sans-serif" font-size="14.333" font-weight="700">Deterministic check</text>
+  <rect x="125.14" y="450.14" width="33.31" height="20.0" rx="8" fill="#FFFFFF" stroke="#C47B16" stroke-width="1.4"/>
+  <text x="141.79" y="464.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Lint</text>
+  <rect x="164.45" y="450.14" width="43.96" height="20.0" rx="8" fill="#FFFFFF" stroke="#C47B16" stroke-width="1.4"/>
+  <text x="186.43" y="464.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Schema</text>
+  <rect x="214.41" y="450.14" width="33.31" height="20.0" rx="8" fill="#FFFFFF" stroke="#C47B16" stroke-width="1.4"/>
+  <text x="231.06" y="464.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Hook</text>
+  <rect  x="324.71" y="410.14" width="240.57" height="78.00" rx="12" fill="#FFF1E8" stroke="#D35400" stroke-width="2"/>
+  <g transform="translate(336.71 436.14)"><circle fill="none" stroke="#D35400" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" cx="11" cy="11" r="5.5"/><path fill="none" stroke="#D35400" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" d="M15.2 15.2 L21 21"/></g>
+  <text x="444.99" y="438.14" text-anchor="middle" fill="#D35400" font-family="Arial, Helvetica, sans-serif" font-size="14.333" font-weight="700">Critic context</text>
+  <rect x="378.38" y="450.14" width="59.94" height="20.0" rx="8" fill="#FFFFFF" stroke="#D35400" stroke-width="1.4"/>
+  <text x="408.35" y="464.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Challenge</text>
+  <rect x="444.32" y="450.14" width="33.31" height="20.0" rx="8" fill="#FFFFFF" stroke="#D35400" stroke-width="1.4"/>
+  <text x="460.97" y="464.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Cite</text>
+  <rect x="483.63" y="450.14" width="27.98" height="20.0" rx="8" fill="#FFFFFF" stroke="#D35400" stroke-width="1.4"/>
+  <text x="497.62" y="464.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Gap</text>
+  <line x1="186.43" y1="491.14" x2="186.43" y2="509.14" stroke="#1E3A5F" stroke-width="1.6" marker-end="url(#arrow-down)"/>
+  <line x1="444.99" y1="491.14" x2="444.99" y2="509.14" stroke="#1E3A5F" stroke-width="1.6" marker-end="url(#arrow-down)"/>
+  <rect  x="66.14" y="514.14" width="499.13" height="78.00" rx="12" fill="#E8F1FC" stroke="#2B6CB0" stroke-width="2"/>
+  <g transform="translate(78.14 540.14)"><rect fill="none" stroke="#2B6CB0" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" x="6" y="5" width="14" height="17" rx="2"/><path fill="none" stroke="#2B6CB0" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" d="M10 5 V4 H16 V5 M9 12 L12 15 L17 9"/></g>
+  <text x="315.71" y="542.14" text-anchor="middle" fill="#2B6CB0" font-family="Arial, Helvetica, sans-serif" font-size="14.333" font-weight="700">Accept or iterate</text>
+  <rect x="211.81" y="554.14" width="81.25" height="20.0" rx="8" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="1.4"/>
+  <text x="252.43" y="568.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Evidence file</text>
+  <rect x="299.06" y="554.14" width="59.94" height="20.0" rx="8" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="1.4"/>
+  <text x="329.03" y="568.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Open gaps</text>
+  <rect x="365.00" y="554.14" width="54.61" height="20.0" rx="8" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="1.4"/>
+  <text x="392.30" y="568.14" text-anchor="middle" fill="#1A1A1A" font-family="Arial, Helvetica, sans-serif" font-size="11.333" font-weight="400">Decision</text>
+  <path d="M 565.28 553.14 H 571.28 Q 581.28 553.14 581.28 543.14 V 251.14 Q 581.28 241.14 571.28 241.14 H 565.28" fill="none" stroke="#1E3A5F" stroke-width="1.6" marker-end="url(#arrow-return)"/>
+</svg>

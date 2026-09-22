@@ -1,0 +1,60 @@
+{
+  "composition": "explanatory",
+  "title": "The harness turns intent into a file the next run can open",
+  "layers": [
+    {
+      "kind": "band",
+      "id": "intake",
+      "title": "Intake",
+      "tone": "blue",
+      "icon": "clipboard",
+      "chips": ["Work type", "Risk", "Artefact"]
+    },
+    {
+      "kind": "band",
+      "id": "context",
+      "title": "Context",
+      "tone": "teal",
+      "icon": "database",
+      "chips": ["Repo map", "Decisions", "Prior plans"]
+    },
+    {
+      "kind": "band",
+      "id": "plan",
+      "title": "Plan",
+      "tone": "green",
+      "icon": "clipboard",
+      "chips": ["Acceptance", "Evidence", "Finish line"]
+    },
+    {
+      "kind": "flow",
+      "id": "execute",
+      "title": "Execute",
+      "tone": "purple",
+      "icon": "chip",
+      "source": "Skill",
+      "lanes": [
+        ["MCP call", "Live data"],
+        ["Shell / files", "Side effect"]
+      ],
+      "sink": "Runtime"
+    },
+    {
+      "kind": "band",
+      "id": "verify",
+      "title": "Verification",
+      "tone": "amber",
+      "icon": "search",
+      "chips": ["Lint", "Critic", "Evidence"]
+    },
+    {
+      "kind": "band",
+      "id": "record",
+      "title": "Record",
+      "tone": "orange",
+      "icon": "clipboard",
+      "chips": ["Decision", "ADR", "Next context"]
+    }
+  ],
+  "return": {"from": "verify", "to": "plan"}
+}

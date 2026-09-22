@@ -1,0 +1,69 @@
+{
+  "composition": "explanatory",
+  "title": "Procedure, capability, and acceptance stay separate",
+  "layers": [
+    {
+      "kind": "band",
+      "id": "router",
+      "title": "Thin router",
+      "tone": "blue",
+      "icon": "sliders",
+      "chips": ["Work", "Risk", "Artefact"]
+    },
+    {
+      "kind": "band",
+      "id": "skill",
+      "title": "Skill (how)",
+      "tone": "purple",
+      "icon": "clipboard",
+      "chips": ["Description", "Steps", "Rubric", "Eval"]
+    },
+    {
+      "kind": "split",
+      "columns": [
+        {
+          "id": "mcp",
+          "title": "MCP (what answers)",
+          "tone": "teal",
+          "icon": "database",
+          "chips": ["Search", "Auth", "Metadata"]
+        },
+        {
+          "id": "runtime",
+          "title": "Runtime",
+          "tone": "green",
+          "icon": "chip",
+          "chips": ["Worktree", "Shell", "Browser"]
+        }
+      ]
+    },
+    {
+      "kind": "split",
+      "columns": [
+        {
+          "id": "check",
+          "title": "Deterministic check",
+          "tone": "amber",
+          "icon": "sliders",
+          "chips": ["Lint", "Schema", "Hook"]
+        },
+        {
+          "id": "critic",
+          "title": "Critic context",
+          "tone": "orange",
+          "icon": "search",
+          "chips": ["Challenge", "Cite", "Gap"]
+        }
+      ]
+    },
+    {
+      "kind": "band",
+      "id": "accept",
+      "title": "Accept or iterate",
+      "tone": "blue",
+      "icon": "clipboard",
+      "chips": ["Evidence file", "Open gaps", "Decision"]
+    }
+  ],
+  "return": {"from": "accept", "to": "skill"}
+}

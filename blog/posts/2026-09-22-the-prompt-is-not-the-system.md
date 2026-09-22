@@ -17,12 +17,14 @@ I have been reading Codex, Cursor, and Spec Kit the way I read a factory. The us
 
 The demo diagram is still `user → agent → tools → done`. The diagram that survives a second session is longer, and most of it is files.
 
-```text
-intent → relevant context → plan with a finish line
-      → skill → tool or MCP → isolated runtime
-      → a check the author does not sign
-      → a file the next run can open
-```
+<AnnotatedFigure
+  :number="1"
+  caption="The harness turns intent into a file the next run can open."
+  notice="Verification can send work back to the plan. The chat is not the record.">
+
+<img src="/figures/personal-agentic-harness.svg" alt="The harness turns intent into a file the next run can open." />
+
+</AnnotatedFigure>
 
 <PullQuote>
 
@@ -56,23 +58,6 @@ OpenAI says the end-to-end behaviour depends on that repository and should not b
 
 </AsideNote>
 
-<AnnotatedFigure
-  :number="1"
-  caption="A gap goes back to the plan. The chat is not the record."
-  notice="If the session vanished, the next agent needs the decision file, not the transcript.">
-
-```mermaid
-flowchart TB
-  Intent[Intent] --> Plan[Plan and acceptance]
-  Plan --> Skill[Skill]
-  Skill --> Runtime[Runtime]
-  Runtime --> Verify[Verification]
-  Verify --> Artifact[Decision file]
-  Verify -.->|gap| Plan
-```
-
-</AnnotatedFigure>
-
 Spec Kit’s public flow is the same shape with the steps named: constitution, specify, clarify, plan, checklist, tasks, analyse, implement, **converge**. Converge is append-only. It compares the tree to the spec and adds tasks. It does not congratulate the implementation. Their idea-assessment path can end in go, needs-clarification, or kill, and a kill does not start coding. That matches the work I do before a repository exists.
 
 <PartDivider eyebrow="Part II" title="A skill is how. A server is what answers." />
@@ -89,6 +74,15 @@ patent-novelty-analysis/          patent-search server
 ```
 
 The skill says: search, cluster, compare, try to break the claim, write the evidence table, then send it to a critic. The server returns documents. The skill does not invent a patent it did not retrieve. The server does not contain an essay on how I like claims written. Those fail differently, and they should be tested differently.
+
+<AnnotatedFigure
+  :number="2"
+  caption="Procedure, capability, and acceptance stay separate."
+  notice="The skill owns the steps. MCP and runtime answer the world. Lint and critic decide whether the run can close.">
+
+<img src="/figures/skill-mcp-verification.svg" alt="Procedure, capability, and acceptance stay separate." />
+
+</AnnotatedFigure>
 
 The front door I will hard-code is small:
 
