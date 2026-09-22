@@ -1,0 +1,72 @@
+{
+  "composition": "explanatory",
+  "title": "Secure AI Reference Architecture",
+  "layers": [
+    {
+      "kind": "band",
+      "id": "governance",
+      "title": "Governance & Obligation",
+      "tone": "blue",
+      "icon": "shield",
+      "chips": ["Regulation", "Policy", "Risk", "System Registry"]
+    },
+    {
+      "kind": "band",
+      "id": "authority",
+      "title": "Authority",
+      "tone": "green",
+      "icon": "key",
+      "chips": ["Identity", "Delegation", "Capability", "Human Authority"]
+    },
+    {
+      "kind": "flow",
+      "id": "execution",
+      "title": "Execution",
+      "tone": "purple",
+      "icon": "chip",
+      "source": "AI / Agent",
+      "lanes": [
+        ["Model Gateway", "Model / AI Service"],
+        ["Tool Gateway", "Enterprise Tool"],
+        ["Action Control", "External System"]
+      ],
+      "sink": "Workflow"
+    },
+    {
+      "kind": "split",
+      "columns": [
+        {
+          "id": "data",
+          "title": "Data / Context",
+          "tone": "teal",
+          "icon": "database",
+          "chips": ["Provenance", "Lineage", "Quality", "Access"]
+        },
+        {
+          "id": "runtime",
+          "title": "Runtime Control",
+          "tone": "amber",
+          "icon": "sliders",
+          "chips": ["Policy", "Limits", "Validation", "Safe State"]
+        }
+      ]
+    },
+    {
+      "kind": "band",
+      "id": "evidence",
+      "title": "Evidence",
+      "tone": "blue",
+      "icon": "clipboard",
+      "chips": ["Identity", "Context", "Decisions", "Actions", "Approvals", "Incidents"]
+    },
+    {
+      "kind": "band",
+      "id": "assurance",
+      "title": "Assurance",
+      "tone": "orange",
+      "icon": "search",
+      "chips": ["Monitor", "Test", "Replay", "Investigate", "Remediate"]
+    }
+  ],
+  "return": {"from": "assurance", "to": "governance"}
+}

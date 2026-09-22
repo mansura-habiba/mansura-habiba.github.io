@@ -1,0 +1,46 @@
+{
+  "composition": "sequence",
+  "title": "Ungrounded answer after a missing retrieval gate",
+  "subfigure": "a",
+  "actors": [
+    {"id": "customer", "name": "Customer (Mexico)"},
+    {"id": "index", "name": "Vector Index (Shared)"},
+    {"id": "model", "name": "Model"}
+  ],
+  "events": [
+    {
+      "kind": "message",
+      "from": "customer",
+      "to": "model",
+      "label": "Query",
+      "path": "standard",
+      "time": "t0"
+    },
+    {
+      "kind": "missing_retrieval_gate",
+      "between": ["index", "model"],
+      "time": "t1"
+    },
+    {
+      "kind": "message",
+      "from": "model",
+      "to": "index",
+      "label": "Retrieval not invoked",
+      "path": "failure",
+      "time": "t2"
+    },
+    {
+      "kind": "message",
+      "from": "model",
+      "to": "customer",
+      "label": "Ungrounded answer",
+      "path": "failure",
+      "time": "t3"
+    }
+  ],
+  "incident": {
+    "label": "Incident",
+    "start": 1,
+    "end": 3
+  }
+}
