@@ -1,15 +1,15 @@
 ---
-title: The Prompt Is Not the System
-subtitle: Repository, skill, and a check the generator does not grade itself.
+title: From Intent to Evidence via a Shared Harness
+subtitle: A personal agentic environment Cursor and Codex can both read — skills, verification, and a file the next run can open.
 date: 2026-09-22
 categories: [agentic-ai, engineering, skills, verification]
 ---
 
-# The Prompt Is Not the System
+# From Intent to Evidence via a Shared Harness
 
 <TldrCard title="TL;DR" read-time="~8 min">
 
-A 2026 agent system is a harness: a repository the agent can read, a procedure small enough to trigger, and a check that can fail the run. Cursor and Codex should sit on that tree. The prompt is an input.
+A 2026 agent system is a harness: a repository the agent can read, a procedure small enough to trigger, and a check that can fail the run. Cursor and Codex should sit on the same tree. The prompt is an input.
 
 </TldrCard>
 
