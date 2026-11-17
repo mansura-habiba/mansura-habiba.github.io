@@ -9,16 +9,10 @@ outline: false
 
 <p class="page-eyebrow">Writing</p>
 
+# Blog
 
+<p class="blog-lead">Notes on agentic AI, enterprise knowledge and the architectural decisions that decide whether systems survive production.</p>
 
-Notes on agentic AI security, hybrid cloud, and the architectural decisions that decide whether systems survive production.
+<p class="blog-lead-links">Looking for reference pages? See <a href="/topics/">Topics</a>, starting with <a href="/topics/quantum">Quantum computing</a>. Older essays are on <a href="https://mansurahabiba.medium.com/" target="_blank" rel="noopener">Medium</a>.</p>
 
-For focused reference pages (diagram + notes layout), see **[Topics](/topics/)** — starting with [Quantum computing](/topics/quantum).
-
-<PostList />
-
----
-
-## On Medium
-
-Older essays still live on Medium for now: [mansurahabiba.medium.com](https://mansurahabiba.medium.com/).
+<BlogIndex />

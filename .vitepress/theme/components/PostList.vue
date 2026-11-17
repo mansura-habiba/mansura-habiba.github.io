@@ -21,9 +21,7 @@ const visible = computed(() => {
     <li v-for="p in visible" :key="p.url" class="post-list-item">
       <p class="post-meta">
         <time :datetime="p.dateISO">{{ p.date }}</time>
-        <template v-if="p.categories.length">
-          &nbsp;·&nbsp; {{ p.categories.join(', ') }}
-        </template>
+        &nbsp;·&nbsp; {{ p.themes.join(' · ') }}
       </p>
       <h3>
         <a :href="p.url">{{ p.title }}</a>

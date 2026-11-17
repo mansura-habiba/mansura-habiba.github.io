@@ -1,4 +1,5 @@
 import { createContentLoader } from 'vitepress'
+import { themesFor } from './post-themes'
 
 export interface Post {
   url: string
@@ -7,6 +8,7 @@ export interface Post {
   date: string
   dateISO: string
   categories: string[]
+  themes: string[]
   excerpt?: string
   draft?: boolean
 }
@@ -24,17 +26,19 @@ export default createContentLoader('blog/posts/*.md', {
           month: 'short',
           day: 'numeric',
         })
+        const categories: string[] = Array.isArray(frontmatter.categories)
+          ? frontmatter.categories
+          : frontmatter.categories
+          ? [frontmatter.categories]
+          : []
         return {
           url,
           title: frontmatter.title ?? '(untitled)',
           subtitle: frontmatter.subtitle,
           date: human,
           dateISO: isoDate,
-          categories: Array.isArray(frontmatter.categories)
-            ? frontmatter.categories
-            : frontmatter.categories
-            ? [frontmatter.categories]
-            : [],
+          categories,
+          themes: themesFor(categories),
           excerpt: excerpt?.replace(/<[^>]+>/g, '').slice(0, 240),
           draft: Boolean(frontmatter.draft),
         }

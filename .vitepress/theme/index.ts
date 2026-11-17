@@ -8,6 +8,7 @@ import HomeHero from './components/HomeHero.vue'
 import FeatureBook from './components/FeatureBook.vue'
 import BookGrid from './components/BookGrid.vue'
 import PostList from './components/PostList.vue'
+import BlogIndex from './components/BlogIndex.vue'
 import PatentGrid from './components/PatentGrid.vue'
 import OpenSourceCard from './components/OpenSourceCard.vue'
 import OpenSourceGrid from './components/OpenSourceGrid.vue'
@@ -42,6 +43,7 @@ export default {
     app.component('FeatureBook', FeatureBook)
     app.component('BookGrid', BookGrid)
     app.component('PostList', PostList)
+    app.component('BlogIndex', BlogIndex)
     app.component('PatentGrid', PatentGrid)
     app.component('OpenSourceCard', OpenSourceCard)
     app.component('OpenSourceGrid', OpenSourceGrid)
