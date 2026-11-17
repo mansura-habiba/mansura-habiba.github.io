@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Books
-description: Books authored by Mansura Habiba — Recent Trends in Modelling Continuous Time Series (Springer, 2026), Emergence of Agentic AI (Leanpub, 2025), and Hybrid Cloud Infrastructure and Operations Explained (Packt, 2022).
+description: Books authored by Mansura Habiba — Accountable Knowledge Architecture for Enterprise AI (Leanpub, 2026), Recent Trends in Modelling Continuous Time Series (Springer, 2026), Emergence of Agentic AI (Leanpub, 2025), and Hybrid Cloud Infrastructure and Operations Explained (Packt, 2022).
 sidebar: false
 aside: false
 outline: false
@@ -11,13 +11,59 @@ outline: false
 
 # Books
 
-Three published titles spanning continuous-time deep learning, agentic AI architecture, and hybrid cloud operations. Each book is written for the practitioner who has to make the architecture decision on Monday morning — not just understand it.
+Four published titles spanning accountable enterprise knowledge, continuous-time deep learning, agentic AI architecture, and hybrid cloud operations. Each book is written for the practitioner who has to make the architecture decision on Monday morning — not just understand it.
 
 <!-- ============================================================= -->
-<!-- 1. Recent Trends in Modelling the Continuous Time Series  ---- -->
+<!-- 1. Accountable Knowledge Architecture for Enterprise AI ----- -->
 <!-- ============================================================= -->
 
 <article class="book-detail is-latest">
+  <div class="book-detail-cover">
+    <a href="https://leanpub.com/accountable-knowledge-architecture-for-ai" target="_blank" rel="noopener">
+      <img src="/books/accountable-knowledge-architecture-cover.png" alt="Accountable Knowledge Architecture for Enterprise AI — book cover" loading="lazy">
+    </a>
+    <a class="btn btn-primary book-detail-cta" href="https://leanpub.com/accountable-knowledge-architecture-for-ai" target="_blank" rel="noopener">Get the book →</a>
+  </div>
+  <div class="book-detail-body">
+
+  <h2>Accountable Knowledge Architecture for Enterprise AI</h2>
+  <p class="book-detail-publisher">Leanpub · 2026 · Designing Distributed Knowledge Systems for Humans, Models, and Autonomous Agents · with Rafflesia Khan and Nafiul Islam Khan</p>
+  <p class="book-detail-tagline">A practical architecture for accountable enterprise AI, connecting evidence, knowledge, decisions, and autonomous agents across distributed systems.</p>
+
+  ### About the book
+
+  This book presents a system design for distributed knowledge platforms that govern how source data becomes claims, how claims earn authority, and how humans, applications and autonomous systems may use them. Domains retain responsibility for their evidence, interpretations and decisions. Knowledge nodes operate within those ownership boundaries and exchange claims through explicit contracts that preserve meaning, provenance and conditions of use.
+
+  The need becomes clear when an agent investigates an incident. It retrieves operational records, combines them with earlier memories, proposes an explanation and recommends an action. As that explanation travels into a ticket, a runbook or another agent's context, later consumers can lose the distinction between an original observation and the conclusions derived from it. The architecture connects these records so consumers can examine their support and decide whether they remain suitable for the requested use.
+
+  ### Who it's for
+
+  - **Chief architects and data and knowledge architects** designing systems that must explain and govern the use of shared knowledge.
+  - **Platform and AI architects** connecting agents to enterprise evidence, decisions and governed execution.
+  - **Senior engineers, technical leaders and postgraduate readers** working on agentic AI, distributed systems or knowledge platforms.
+
+  ### What the book covers
+
+  - The seven characteristics of **Accountable Knowledge in Action**: accountable, contextual, on-demand, actionable, attributable, composable and interoperable, and explainable and auditable.
+  - A reference architecture built on **Accountable Knowledge Units**, **Knowledge Context Packages**, the **Knowledge Context Exchange Protocol** and a separate **Governed Action Gateway**.
+  - The path from source observation through candidate formation, validation, governed reuse, decision and observed outcome.
+  - Semantic interoperability, local processing, asynchronous exchange, evidence-aware correlation, retained disagreement and reversible promotion.
+  - The pressures agentic AI adds: output volume, rapid decisions, nondeterministic execution, stale memory and delegation across agent handoffs.
+  - Worked enterprise cases, including invoice processing and airline booking across organisational boundaries.
+
+  <div class="book-detail-meta">
+    <a class="meta-pill" href="https://leanpub.com/accountable-knowledge-architecture-for-ai" target="_blank" rel="noopener">Leanpub</a>
+    <a class="meta-pill" href="/blog/posts/2026-11-17-what-engineering-and-support-figured-out">Related writing</a>
+  </div>
+
+  </div>
+</article>
+
+<!-- ============================================================= -->
+<!-- 2. Recent Trends in Modelling the Continuous Time Series  ---- -->
+<!-- ============================================================= -->
+
+<article class="book-detail">
   <div class="book-detail-cover">
     <a href="https://link.springer.com/book/9783032180216" target="_blank" rel="noopener">
       <img src="https://media.springernature.com/w158/springer-static/cover/book/978-3-032-18021-6.jpg" alt="Recent Trends in Modelling the Continuous Time Series using Deep Learning — book cover" loading="lazy">
@@ -59,7 +105,7 @@ Three published titles spanning continuous-time deep learning, agentic AI archit
 </article>
 
 <!-- ============================================================= -->
-<!-- 2. Emergence of Agentic AI  --------------------------------- -->
+<!-- 3. Emergence of Agentic AI  --------------------------------- -->
 <!-- ============================================================= -->
 
 <article class="book-detail">
@@ -103,7 +149,7 @@ Three published titles spanning continuous-time deep learning, agentic AI archit
 </article>
 
 <!-- ============================================================= -->
-<!-- 3. Hybrid Cloud Infrastructure and Operations Explained ---- -->
+<!-- 4. Hybrid Cloud Infrastructure and Operations Explained ---- -->
 <!-- ============================================================= -->
 
 <article class="book-detail">
