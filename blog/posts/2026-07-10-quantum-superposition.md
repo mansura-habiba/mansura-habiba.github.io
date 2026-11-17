@@ -14,7 +14,7 @@ draft: false
 
 <TopicNav title="Concepts">
   <TopicNavItem label="Superposition" subtitle="Qubit states" :active="true" color="#9b59b6" />
-  <TopicNavItem label="Entanglement" subtitle="Correlated pairs" href="/blog/posts/quantum-entanglement" color="#e74c8c" />
+  <TopicNavItem label="Entanglement" subtitle="Correlated pairs" color="#e74c8c" />
   <TopicNavItem label="Measurement" subtitle="State collapse" color="#3498db" />
   <TopicNavItem label="Gates" subtitle="Unitary operations" color="#2ecc71" />
 </TopicNav>
@@ -80,12 +80,6 @@ Schrödinger's cat is a macroscopic *thought experiment* about superposition —
 - [Nielsen & Chuang — *Quantum Computation and Quantum Information*, Ch. 1](https://www.cambridge.org/core/books/quantum-computation-and-quantum-information/01E10196D0A682A6AEFFEA32D305BE0A)
 - [IBM Quantum Learning — Superposition](https://learning.quantum.ibm.com/)
 - [Qiskit Textbook — Representing Qubit States](https://qiskit.org/textbook/ch-states/representing-qubit-states.html)
-</TopicFootPanel>
-
-<TopicFootPanel title="Related">
-- [Entanglement](/blog/posts/quantum-entanglement) — when two qubits share a single state
-- [Quantum gates](/blog/posts/quantum-gates) — unitary operations that rotate amplitudes
-- [Measurement](/blog/posts/quantum-measurement) — why observation changes the state
 </TopicFootPanel>
 
 </TopicFoot>

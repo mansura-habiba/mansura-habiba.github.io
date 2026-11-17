@@ -13,6 +13,6 @@ outline: false
 
 <p class="blog-lead">Notes on agentic AI, enterprise knowledge and the architectural decisions that decide whether systems survive production.</p>
 
-<p class="blog-lead-links">Looking for reference pages? See <a href="/topics/">Topics</a>, starting with <a href="/topics/quantum">Quantum computing</a>. Older essays are on <a href="https://mansurahabiba.medium.com/" target="_blank" rel="noopener">Medium</a>.</p>
+<p class="blog-lead-links">Older essays are on <a href="https://mansurahabiba.medium.com/" target="_blank" rel="noopener">Medium</a>.</p>
 
 <BlogIndex />
