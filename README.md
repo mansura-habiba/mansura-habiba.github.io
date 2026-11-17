@@ -35,7 +35,7 @@ GitHub Pages must be set to deploy via Actions (not from a branch):
 │       ├── posts.data.ts               Build-time loader for blog/posts/*.md
 │       └── components/
 │           ├── HomeHero.vue            Big hero on the homepage
-│           ├── FeatureBook.vue         "Latest book" promo
+│           ├── FeatureBook.vue         "Latest books" three-card grid
 │           ├── BookGrid.vue            Three-card book grid
 │           ├── PostList.vue            Blog post list
 │           └── PatentGrid.vue          Patent tile grid

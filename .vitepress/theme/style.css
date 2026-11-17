@@ -355,6 +355,50 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+/* ---- Latest books grid (FeatureBook.vue) ------------------------ */
+.feature-book-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+  margin: 0 0 2.5rem;
+}
+.feature-book {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+}
+.feature-book-cover {
+  align-self: center;
+  margin-bottom: 1.2rem;
+}
+.feature-book-cover img {
+  height: 220px;
+  width: auto;
+  border-radius: 6px;
+  box-shadow: 0 12px 30px -12px rgba(0, 0, 0, 0.25);
+}
+.feature-book h3 {
+  font-family: var(--vp-font-family-display);
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+.feature-book-blurb {
+  flex: 1;
+  margin: 0 0 1.2rem;
+  font-size: 0.92rem;
+  color: var(--vp-c-text-2);
+}
+@media (max-width: 900px) {
+  .feature-book-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===================================================================
  * Buttons (use VitePress's built-in .VPButton via <a class="vp-button"> )
  * =================================================================*/
@@ -421,6 +465,59 @@ h1, h2, h3, h4, h5 {
 .post-excerpt {
   margin: 0.4rem 0 0 !important;
   color: var(--vp-c-text-2);
+}
+
+/* ---- Home page variant: date column, theme eyebrow, whole row clickable */
+.post-list--home .post-list-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  column-gap: 1.6rem;
+  padding: 1.2rem 1rem;
+  margin: 0 -1rem;
+  border-radius: 10px;
+  transition: background 0.15s ease;
+}
+.post-list--home .post-list-item:first-child { padding-top: 1.2rem; }
+.post-list--home .post-list-item:hover { background: var(--vp-c-bg-soft); }
+.post-list--home .post-meta { display: contents; }
+.post-list--home .post-meta time {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  padding-top: 0.15rem;
+  font-size: 0.85rem;
+  color: var(--vp-c-text-3);
+}
+.post-list--home .post-meta-sep { display: none; }
+.post-list--home .post-themes {
+  grid-column: 2;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.post-list--home h3,
+.post-list--home .post-excerpt { grid-column: 2; }
+.post-list--home h3 { font-size: 1.2rem; }
+.post-list--home .post-list-item:hover h3 a { color: var(--vp-c-brand-1); }
+.post-list--home h3 a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+@media (max-width: 640px) {
+  .post-list--home .post-list-item { grid-template-columns: 1fr; }
+  .post-list--home .post-meta time {
+    grid-row: auto;
+    grid-column: 1;
+    padding-top: 0;
+    margin-bottom: 0.2rem;
+  }
+  .post-list--home .post-themes,
+  .post-list--home h3,
+  .post-list--home .post-excerpt { grid-column: 1; }
 }
 
 /* ===================================================================

@@ -17,7 +17,7 @@ outline: false
   <a class="see-all" href="/blog/">All posts →</a>
 </div>
 
-<PostList :limit="4" />
+<PostList :limit="6" class="post-list--home" />
 
 <div class="section-header">
   <h2>Elsewhere on this site</h2>
@@ -26,7 +26,7 @@ outline: false
 <div class="card-grid">
   <a class="card" href="/book">
     <h3 style="font-family: var(--vp-font-family-display); margin: 0 0 .4rem;">Books</h3>
-    <p style="margin: 0; color: var(--vp-c-text-2); font-size: .95rem;">Three published titles on hybrid cloud, agentic AI, and continuous-time deep learning.</p>
+    <p style="margin: 0; color: var(--vp-c-text-2); font-size: .95rem;">Four published titles on accountable enterprise knowledge, agentic AI, continuous-time deep learning, and hybrid cloud.</p>
   </a>
   <a class="card" href="/publications">
     <h3 style="font-family: var(--vp-font-family-display); margin: 0 0 .4rem;">Publications &amp; patents</h3>
