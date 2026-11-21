@@ -8,23 +8,20 @@ import { withBase } from 'vitepress'
       <img :src="withBase('/images/mansura.png')" alt="Mansura Habiba" />
     </div>
     <div class="home-hero-text">
-      <p class="home-hero-tagline">Principal Platform Architect — AI · HPC · Cloud</p>
+      <p class="home-hero-tagline">Principal Architect — Enterprise AI Platforms · Agentic Infrastructure · HPC</p>
       <h1>Hi, I'm Mansura.</h1>
       <p>
-        I architect and operate AI and high-performance computing platforms at
-        <strong>IBM</strong>. My work sits at the seam where deep-learning
-        research meets the boring-but-load-bearing realities of enterprise
-        infrastructure — security, scalability, and the chain-of-custody people
-        only remember after something goes wrong.
+        I architect multi-tenant enterprise AI capabilities at <strong>IBM Software</strong>, including
+        governed agent tool access, cross-product execution, and model routing. Previously, I led
+        architecture for a large enterprise HPC compute estate supporting financial services.
       </p>
       <p>
-        I write about agentic AI security, hybrid cloud, and the architectural
-        decisions that decide whether an AI system survives contact with
-        production.
+        I write about the decisions that make AI systems deployable, governable, resilient,
+        and accountable in production.
       </p>
       <div class="home-hero-actions">
-        <a class="btn btn-primary" href="/blog/">Read the blog</a>
-        <a class="btn btn-ghost" href="/cv.html">View full CV</a>
+        <a class="btn btn-primary" href="/cv.html">Professional CV</a>
+        <a class="btn btn-ghost" href="/blog/">Read the blog</a>
       </div>
     </div>
   </section>
