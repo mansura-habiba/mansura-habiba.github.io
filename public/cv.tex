@@ -1,379 +1,75 @@
-\documentclass[12pt,parskip=half]{scrartcl}
-\usepackage{longtable}
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=0.8in]{geometry}
+\usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage{multicol}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-
-% use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage[]{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-}{}
-\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
-\usepackage[unicode=true]{hyperref}
-\hypersetup{
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
-\usepackage[margin=1in]{geometry}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep,topsep=3pt,leftmargin=18pt}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{0}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-\usepackage{parskip}
-% set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
-\usepackage{fontspec}
-\defaultfontfeatures{Scale=MatchLowercase,Ligatures={TeX}}
-\setmainfont{Liberation Serif}
-\setsansfont{Liberation Serif}
-\setmonofont[SmallCapsFont={Liberation Serif}]{Liberation Serif}
-\usepackage{hyperref}
-\usepackage{multirow}
-\usepackage{xcolor}
-\definecolor{cvlinkcolor}{RGB}{6,125,233}
-\hypersetup{colorlinks,linkcolor=cvlinkcolor,citecolor=cvlinkcolor,urlcolor=cvlinkcolor,bookmarksnumbered,pdfinfo={Title={Curriculum Vitae},Author={Lighton Phiri},Creator={Lighton Phiri},Subject={Curriculum Vitae},Keywords={Curriculum Vitae},CreationDate={D:20150513232724}}}
-\renewcommand\labelenumi{[\theenumi]}
-
-\date{}
+\setlength{\parskip}{5pt}
 \begin{document}
-
-
-\begin{table}[h]
-%%%\centering
-{\def\arraystretch{1.2}\tabcolsep=0pt
-\begin{tabular}{p{0.50\linewidth}p{0.20\linewidth}p{0.25\linewidth}}
-
-  \multirow{1}{*}{\LARGE \textbf{Mansura Habiba}} &  &  \\
-  
-  & & \\
-  
-Principal Architect (AI, HPC, Cloud) & \multicolumn{1}{r}{Linkedin:\;\;}  & \multicolumn{1}{l}{\href{https://www.linkedin.com/in/mansura-h-a0174a19}{@MansuraHabiba}} \\
-  
-IBM in Ireland, Dublin, Ireland & \multicolumn{1}{r}{Email:\;\;} &\multicolumn{1}{l}{} \\
-
-
-  Patents, Publications are listed in \href{https://scholar.google.com/citations?user=oee3rpwAAAAJ}{Google Scholar} & \multicolumn{1}{r}{twitter:\;\;}  & \multicolumn{1}{l}{\href{https://twitter.com/MansuraHabiba}{@MansuraHabiba}} \\
-
-Published book: \href{https://packt.link/a/9781803248318}{Hybrid Cloud Infrastructure and Operations Explained}, \href{https://leanpub.com/emergence-agentic-ai}{Emergence of Agentic AI}, \href{https://leanpub.com/mastering-ai-operations}{Mastering AI Platforms: From Setup to Advanced Operations
-} & \multicolumn{1}{r}{ Badges:\;\;}  & \multicolumn{1}{l}{\href{https://www.credly.com/users/mansura-habiba/badges}{Professional Badges in Credly}}\\
-
- & \multicolumn{1}{r}{ Mobile No:\;\;}  & \multicolumn{1}{l}{+353899822405}\\
-\end{tabular}%
-}
-\end{table}
-
-\vspace{0.3cm}
-
-\section*{Who is Mansura?}
-
-Mansura Habiba is a seasoned technology leader with over \textbf{15 years of experience} in \textbf{AI architecture, cloud-native development, platform engineering}, and \textbf{solution design} across industries including \textbf{finance, healthcare, telecommunications, energy}, and the \textbf{public sector}. She has held pivotal roles as a \textbf{Principal Architect, AI Technical Advocate, Technical Lead}, and \textbf{Cloud-native Engineer}, delivering innovation at scale for some of the world’s most complex enterprise platforms.
-
-At \textbf{IBM (2014–Present)}, she has led high-impact initiatives as part of the \textbf{AI Elite Team}, shaping the strategic direction of IBM’s AI-powered products and hybrid cloud platforms. She currently drives the integration of \textbf{Generative AI} into high-performance cloud operations—enhancing observability, self-healing, security, and platform scalability for global clients, including top-tier banks, automakers, and energy providers.
-
-Mansura is an \textbf{Open Group Certified Architect}, holds \textbf{multiple public cloud certifications} (including IBM Cloud, Cloud Paks, AWS, and Azure), and has authored several books on \textbf{MLOps, AI AgentOps}, and \textbf{Cloud Governance}. She earned a \textbf{Ph.D. in Deep Learning}, with published research in secure cloud architecture, AI for natural disaster management, and applied machine learning.
-
-Her contributions include:
+\begin{center}
+{\Huge\bfseries Mansura Habiba, Ph.D.}\\[4pt]
+{\large Principal Architect --- Large-scale x86 Infrastructure, Enterprise AI and Security}\\
+Dublin, Ireland\\
+\href{https://www.linkedin.com/in/mansura-h-a0174a19}{LinkedIn} \quad \href{https://github.com/mansura-habiba}{GitHub} \quad \href{https://scholar.google.com/citations?user=oee3rpwAAAAJ}{Google Scholar}
+\end{center}
+\section*{Executive Profile}
+Senior technology architect with 18+ years in software, distributed systems, AI infrastructure and enterprise platforms. Developed enterprise AI tool-gateway capabilities and currently architecting multi-tenant agentic SaaS and multi-model routing at IBM Software. Previously chief technical architecture owner for an estate exceeding 20,000 x86-64 compute systems supporting a Fortune 100 financial-services client. Security is integral to both domains: identity, authentication, authorisation, tenant isolation, platform controls, operational resilience and audit evidence.
+\section*{Selected Impact}
 \begin{itemize}
-    \item \textbf{12+ patents} (filed/granted) in areas such as Neural Networks, Quantum Computing, Blockchain, Generative AI, and Sustainable Technology
-    \item \textbf{3 Books} on Hybrid Cloud, Agentic AI and Ai Operations.
-    \item \textbf{Editorial board member} and \textbf{IEEE reviewer} for international journals and conferences
-    \item \textbf{Speaker} at multiple internal and external technology forums
-    \item \textbf{Mentor} in IBM’s global mentoring program, supporting both technical skill development and career growth
+\item Designed and developed MCP Composer, integrating multiple enterprise MCP servers and tools with governed discovery, authentication, authorisation, selective policy enforcement and operational interfaces.
+\item Architecting shared multi-tenant AI platform and multi-model routing capabilities.
+\item Chief technical architecture responsibility for a managed estate of more than 20,000 enterprise x86-64 compute systems, including security, identity, resilience and recovery.
+\item Reduced standardised infrastructure environment deployment to approximately 80 minutes through automation.
+\item Held organisational responsibility for 45 engineers, including hiring authority, performance management and engineering delivery, without direct line reports.
+\item Led resilience validation and incident response during the 2024 CrowdStrike disruption.
+\item Key technical decision-maker for platform investment choices, using unit economics to assess trade-offs; annual budget accountability resided elsewhere.
 \end{itemize}
-
-She combines deep technical acumen with a passion for responsible AI innovation. Her work continues to influence \textbf{platform modernization, AI governance}, and \textbf{enterprise transformation} across IBM and its global client base.
-
-
-\vspace{0.3cm}
-
-\section*{Key Skills}
-\begin{itemize}
-
-    \item \textbf{AI Advocacy \& Enterprise Enablement:} As a lead in IBM’s AI Elite Team, drives enterprise AI adoption by aligning IBM's AI capabilities with client needs through strategic solutioning, architectural leadership, technical workshops, and stakeholder engagement. Translates complex AI concepts into business value for large-scale transformation.     
-    \item \textbf{Platform \& Operations Management:} Led global enterprise platform operations across AWS, Azure, IBM Cloud, and GCP. She specializes in cost optimization, security hardening, incident management (including MIM/critsits), and designing observability solutions using Grafana, Instana, DataDog, and native cloud tools.
-    
-    \item \textbf{High-Performance Computing (HPC):} Designed and optimized AI-enhanced HPC platforms using IBM Symphony, Scale, and LSF, incorporating automation and observability to improve workload efficiency and reduce downtime.
-
-    \item \textbf{AI Tools \& Platforms}: Hands-on experience in TensorFlow, PyTorch, Keras, Scikit-learn,  IBM Watson, AWS SageMaker, Google AI Platform, and Microsoft Azure AI. She is skilled in model deployment with Docker and Kubernetes and automation of ML pipelines using Kubeflow and MLflow. She has Hands-on experience in data preprocessing, feature engineering, and handling large datasets using Pandas, NumPy, and Spark.
-    \item \textbf{AI Strategy \& Execution:} Led implementation of AI workflows in cloud operations, delivering \$500K+ annual cost savings. Deep experience in AIOps, anomaly detection, threat analysis, and automated remediation using Generative AI and ML models.
-    \item \textbf{Site Reliability Engineering :} Led SRE team of 45 engineers for the world's largest Banking, automobile, and energy supplier clients. Define SRE practice and standards, perform maturity analysis for the organization and team and define the roadmap for improvement.   
-    
-    \item \textbf{Software Development:} Proficient in Java, Python, C++, R, and Go for distributed computing, RESTful API, Neural network Modelling, MLOPs, DevOps, Container platform, e.g. Docker, Kubernetes and OpenShift; and cloud-native applications development.
-\end{itemize}
-
-
-\vspace{0.3cm}
-
-\section*{Education}
-\noindent \textbf{Ph.D. in Deep Learning, University of Maynooth, Ireland} \\
-Thesis: Neural Ordinary Differential Equations for Continuous Time Series
-
-\noindent \textbf{M.Sc. in Software Engineering, American International University, Bangladesh}\\
-Thesis: Exploring Cloud-Based Disaster Management
-
-\noindent \textbf{B.Sc. in Computer Science and Engineering, University of Khulna, Bangladesh}
-
-\vspace{0.3cm}
-
 \section*{Professional Experience}
-
-\subsection*{Principal Architect, IBM AI Elite Team, IBM Software | 04/2025 -- Present}
+\textbf{IBM Software --- Principal Architect, Agentic Cross-Product SaaS Platforms} \hfill Apr 2025--Present
 \begin{itemize}
-    \item Serving as one of the leads in IBM’s AI Elite Team, responsible for defining the future strategy of IBM’s AI-enabled software, platforms, and practices.
-    \item Collaborates closely with software development and sales teams to promote IBM’s enterprise AI capabilities and educate clients on AI adoption strategies.
-    \item Leads architectural discussions and helps shape the technical trajectory of IBM’s AI portfolio by identifying and aligning solutions with client needs.
-    \item Conducts technical workshops and solutioning sessions with enterprise clients to demonstrate the value of AI-driven transformation.
-    \item Applies deep knowledge of AI technologies, including IBM’s proprietary offerings, to provide thought leadership and insights into the competitive landscape.
-    \item Bridges interdisciplinary teams across AI, cloud, and software engineering to foster integrated, scalable solutions for clients.
-    \item Communicates complex AI and technical concepts effectively to both technical and business stakeholders, enabling clear decision-making and strategy alignment.
-    \item Evaluates emerging AI technologies and evolving business requirements to provide recommendations on IT operations and architectural improvements.
+\item Architect multi-tenant enterprise AI capabilities for governed cross-product execution and shared model/tool use.
+\item Developed MCP Composer and designed tool-policy controls and agent orchestration contracts spanning identity, scoped permissions, audit evidence, retries, partial completion and recoverability.
+\item Architecting provider-independent model routing, telemetry, resiliency and tenant-level control patterns; lead cross-product architecture reviews.
 \end{itemize}
-
-
-\subsection*{Principal Platform Architect, AI and HPC platform, Hybrid Cloud Management Managed Service, IBM | 07/2022 -- 04/2025}
+\textbf{IBM Consulting --- Principal Platform Architect, AI \& HPC Platforms} \hfill Jan 2022--Mar 2025
 \begin{itemize}
-   \item Led the design, development, and implementation of platform engineering solutions using various cutting-edge technologies, including cloud platforms, AI, and container orchestration systems, to meet the needs of large-scale enterprises.
-   \item Led the design and architecture of managed services platforms across IBM Cloud, AWS, and Azure for high-profile clients, including top 5 global banks, a leading German car manufacturer, and a major US energy and power grid supplier.
-    \item Led design and implementation of central observability solution, automation for 24/7 operations for the platform to keep the uptime maximum.
-    \item Led the operation and management engineering process optimisation by implementing GenAI for different operations activities, i.e., providing continuous observability, troubleshooting, self-healing, and optimization of the HPC platform. 
-    \item Led delivery engineering team for different operations and engineering activities (i.e., modernization, containerization, Automation validation, Patching, Security and Privacy management, and others), including a team of 45 members across the globe in India, China, Mexico, and Egypt. 
-    \item Spearheaded designing and implementing AI-driven HPC solutions for IBM clients, optimizing performance and reducing operational costs.
-    
-    \item Established and defined key performance indicators (KPIs) and service-level agreements (SLAs) to scale businesses, ensuring transparency and reporting to senior leadership.
-\item Ensured compliance with these metrics, driving operational excellence and consistent service delivery.
-\item Led the implementation of centralized proactive monitoring and continuous improvement processes to maintain high operational standards and minimize downtime.
-\item Developed end-to-end system designs that focused on performance, security, and scalability to meet industry-specific requirements.
-
-\item Designed and implemented features for operation management using AWS, IBM Cloud, Azure cloud services, OpenShift, and Kubernetes container platform in addition to Ansible on the RedHat Ansible Automation Platform.
-
-    \item Led multiple workstreams across functional and geographic divisions, aligning platform engineering efforts with larger business strategies and ensuring consistent execution and delivery.
-\item Drove cross-functional collaboration between AI, cloud, and software engineering teams, ensuring seamless integration of solutions across divisions.
+\item Chief technical architecture owner for a 20,000+ x86-64 compute estate supporting a Fortune 100 investment bank.
+\item Owned architecture across large-scale x86 infrastructure, network resilience, identity and access controls, security, storage, observability, cloud integration and disaster recovery.
+\item Held hiring authority, performance management and organisational delivery responsibility for a global engineering group of 45, without direct line reports.
+\item Supported automated infrastructure deployment and led operational resilience during the CrowdStrike event.
 \end{itemize}
+\textbf{IBM Consulting --- Platform Architect / Offering Lead, Hybrid Cloud Management} \hfill Oct 2021--Mar 2025\\
+\emph{Concurrent assignment.} Defined hybrid-cloud managed-platform architecture, reusable operating patterns, and services spanning IBM Cloud, AWS, Azure, Kubernetes and OpenShift.
 
-\subsection*{Platform Architect, Offering Lead, Hybrid Cloud Management Managed Service, IBM | 10/2021 -- 06/2022}
+\textbf{IBM Cloud / GTS --- Lead Solution Architect} \hfill Jan 2020--Oct 2021\\
+Designed hybrid-cloud and OpenShift enterprise solutions and modernisation roadmaps.
+
+\textbf{IBM Software --- Technical Lead / Software Engineer} \hfill Nov 2017--Dec 2019\\
+Led Watson application modernisation with Kubernetes, microservices and automated delivery; developed ML/NLP and platform tooling.
+
+\textbf{IBM Software --- Staff Software Engineer} \hfill Sep 2014--Oct 2017\\
+Developed enterprise APIs, analytics, cloud-ready services and distributed systems.
+
+\textbf{Cimsolutions B.V. --- Senior Software Engineer Consultant} \hfill May 2013--Aug 2014\\
+Delivered secure public-sector and scientific applications and integration services.
+
+\textbf{Samsung R\&D Institute --- Lead Engineer / Technical Lead} \hfill Nov 2011--Mar 2013\\
+Led device communications-protocol engineering and release coordination.
+
+\textbf{Grameen Solutions Ltd. --- Senior Software Engineer} \hfill Jan 2011--Sep 2011\\
+\textbf{Bording Vista Ltd. --- Software Engineer} \hfill Apr 2008--Jun 2009
+
+\section*{Capabilities}
+Large-scale x86-64 enterprise compute, HPC architecture, resilience and disaster recovery; MCP Composer, enterprise AI gateways, model routing, stateful agent execution; security architecture, identity, authentication and authorisation, tenant isolation, scoped permissions, runtime policy enforcement and audit evidence; Kubernetes, OpenShift, hybrid cloud, infrastructure as code, Python and Java.
+\section*{Education and Credentials}
 \begin{itemize}
-    \item Designed hybrid cloud solutions integrating AWS, Azure and IBM Cloud services, providing migration strategies for public and private sectors.
-    \item Collaborated with reference architects and led technical engagements, advising on cloud-native reference architectures and best practices.
-    \item Developed roadmaps for cloud cost optimization and disaster recovery strategies using AWS, Azure and IBM Cloud Services.
-    \item Managed large-scale OpenShift and Kubernetes deployments, ensuring seamless cloud migration and system modernization.
-    \item As the Offering Lead for IBM Platform Engineering Services and Center of Competency, spearheaded the design, development, and implementation of platform engineering solutions using a variety of cutting-edge technologies, including cloud platforms, AI, and container orchestration systems, to meet the needs of large-scale enterprises.
-    \item Provided strategic thinking and leadership in building scalable and resilient solutions for enterprise clients, ensuring alignment with both business and technological goals.
-    \item Led the creation of roadmaps for AI and platform modernization solutions, ensuring these aligned with IBM's broader business objectives.
-    \item Delivered executive-level updates to senior management on high-visibility projects and initiatives, ensuring timely communication and strategic alignment with company objectives.
-    \item Recruited and built a high-performing team of engineers, ensuring that new hires had the right mix of skills and expertise to drive innovation and meet client needs.
-    \item Fostered a culture of open feedback, coaching, and mentorship for engineers at all levels, ensuring they had the support needed to grow professionally and stay at the forefront of industry trends.
-    \item Managed and optimized budgets, ensuring accurate forecasting and cost allocation while delivering on business needs. This involved balancing resource allocation across multiple projects and ensuring alignment with company goals.
-    \item Set a vision for a culture of innovation within the platform engineering services, encouraging my team to challenge conventional approaches and explore new methodologies, such as AI-driven automation, distributed ledger technology, and microservices architecture.
-    \item Engaged in thought leadership initiatives within IBM and externally, contributing to industry discussions on platform architecture, AI, and cloud technologies. Led comparative analysis and benchmarking for the business against competitors.
+\item Ph.D. in Deep Learning, Maynooth University, Ireland (2022).
+\item M.Sc. in Software Engineering, American International University, Bangladesh (2013).
+\item B.Sc. in Computer Science and Engineering, Khulna University, Bangladesh (2007).
+\item The Open Group Distinguished Architect, Level 3 (2024).
 \end{itemize}
-
-\subsection*{Lead Solution Architect, IBM | 01/2020 -- 10/2021}
-\begin{itemize}
-    \item Led Hybrid cloud migration projects for multiple industries, helping clients transition to cloud infrastructure by integrating Cloud services.
-    \item Solution significant deals for cloud modernization across the healthcare, finance, and telecom sectors, driving \$500M+ in revenue.
-    \item Defined reference architectures for scalability, security, and cost efficiency during cloud migration projects.
-    \item Established technical reference architectures for Cloud Native and OpenShift-based application modernization on AWS, Azure and IBM Cloud Services.
-    \item Led the architecture and design of cloud platform solutions, migration and modernization solutions, containerization solutions, and deep learning solutions - driving innovation in artificial intelligence applications.
-    
-   \item Led designing and deploying highly available and resilient OpenShift clusters tailored to the specific needs of enterprise clients in finance (insurance, banking), retail, energy and government industry-based clients. These solutions included on-premises and cloud-based deployments, ensuring compatibility with hybrid or multi-cloud strategies.
-   \item Implemented best practices for security, including multi-cluster management (up to 50 clusters) across global platforms, network policies, and compliance with industry standards, ensuring that OpenShift clusters were secure and aligned with organisational policies.
-   \item Defined and standardised practices, processes and tools for platform operations using concepts like MLOps, SRE and Platform engineering
-\end{itemize}
-
-\subsection*{Technical Lead, Software Engineer, IBM | 11/2017 -- 12/2019}
-\begin{itemize}
-      \item Led the modernization of the IBM Watson career application by leveraging Kubernetes and cloud-native services. 
-     \item Led a team of Senior Software Engineers, DevOps, and QA in IBM Software Group, driving the adoption of cognitive applications for IBM's largest banking, insurance, and investment banking clients.
-     \item Led a multi-disciplinary team for Application Modernization and Enterprise adoption, designing solution architecture for Application Deployment, Security, Network, DevOps Pipeline, Scalability, Backup, and Disaster Recovery.
-     \item Implemented Algorithms based on deep learning and other AI concepts such as NLP, pattern recognition, and identification of bias to improve AI transparency. 
-     \item Implemented a database backup and disaster recovery solution, developed a micro-service for Bulk Data Ingestion to the Data Lake, and deployed applications using the DevOps pipeline on the Kubernetes cluster.
-     \item Led the strategic product management and defining business strategy for customers. Led and coached technical teams for client success with IBM software.
-     \item Developed proofs-of-concept for customer presentations and internal research, designed schema and map-reduce functions for the NoSQL database, and actively participated in collaboration workshops with customers to explore technical solutions.
-     \item Led client communication for use case identification and new feature requirements for cognitive AI applications. Assessed the feasibility of those new feature requirements for the product to be included in the road map. Revised the road map for the product with the offering manager and finalised them.
-    \item Mentored several IBMers for Angular, Nodejs, R, Cloudant, Blockchain, Design Thinking, IBM cloud and Kubernetes and career progression. Mentored transition year students for a challenge day project. 
-    
-\end{itemize}
-
-\subsection*{Staff Software Engineer, IBM | 09/2014 -- 10/2017}
-\begin{itemize}
-\item Developed web and J2EE applications using technologies such as J2EE, IBM Cloudant, IBM Cloud Object Storage, IBM Kubernetes Service, Angular, Nodejs, CSS, Swagger, microservices, IBM Design Thinking, and Agile.
- \item Developed and enhanced data insight platforms, incorporating advanced analytics, visualization, and reporting functionalities to provide actionable insights for stakeholders.
- \item Led design thinking and agile methods in the day-to-day engineering processes for the project. 
-\item Mentored several IBMers for Angular, Nodejs, R, Cloudant, Blockchain, Design Thinking, IBM cloud and Kubernetes and career progression. Mentored transition year students for a challenge day project. 
-    
-\end{itemize}
-
-
-
-\subsection*{Senior Software Engineer Consultant, Cimsolutions B.V. | 05/2013 -- 09/2014}
-\begin{itemize}
-
-\item Developed applications and delivered multiple projects for the Dutch Finance Ministry, Group2000 B.V and Astron.
- 
-\item For the Duch Finance Ministry, I developed functionalities for a web portal to integrate the Dutch government with the Pan European Proxy Service (PEPS) for mijnrvo and klap portal as part of the e-recognition tool for entrepreneurs in EURO countries (eHerkenning) upgrade project. I developed functionalities using Java, Maven, Ant, SAML, Oracle Single Sign-On (OSSO), Spring, Struts 2, JSF and Java Security.
-
-\item Developed components for software-defined network functionalities for telecommunication providers in the Netherlands through Group 2000 BV using Java, Groovy, Grails, Test Driven Development and Agile. 
-
- \item  For Astron, I developed a web-based proposal submission system (NorthStar). This web portal was mainly for astronomers to submit the proposal to access the data from the Lofar satellite using J2EE, Spring, Tomcat, Hibernate, JSF, Jquery, HTML, CSS, Maven, Ant, RedMine, Jenkins, TDD and Agile. Astron invited me for the second time. During my second contract with Astron, I implemented algorithms to schedule the observation time of the Lofar satellite based on the requested data and time submitted by astronomers to access the Lofar satellite optimally.
-
-\end{itemize}
-
-
-\subsection*{Lead Engineer, Tech Lead, Samsung R\&D Institute, Bangladesh |11/2012--03/2013 }
-
-\begin{itemize}
- \item Led multi-disciplinary teams of engineers specializing in Wifi/GPS, SyncMl, and Bluetooth/NFC technologies as a Technical Lead.
- \item Drove the development and improvement efforts for communication protocols, including Bluetooth, WiFi, WiFi Direct, NFC, GPS, SyncML, Device Encryption, Device Synchronization, and Fotaclient, for multiple major Samsung smartphone releases.
- \item Led the R\&D network team for the feature implementation, troubleshooting and configuration management for 14 smartphone models, including S4, S3, S2-NFC, Note II, etc.
- \item Developed mobile applications addressing various NFC Tag, SyncML, Bluetooth, and WiFi use cases, utilizing Java, Android, and C++.
- 
-\end{itemize}
-
-\vspace{0.3cm}
-
-\subsection*{Senior Software Engineer, Grameen Solutions Limited, Bangladesh |01/2011--09/2011}
-\begin{itemize}
-    \item Developed Mobile Financial Solutions using the Macalla platform (Roamware). Worked on developing mobile financial solutions for several banks (e.g ecobank) and telecommunication operators (STC Telecom Kuwait, Al-Bahar Telecom Kuwait, Vodaphone Romania) using J2EE, JSP, JSF, Spring, XML, Struts 2, XHTML, Hibernate, JasperReport, JUnit, JQuery, Castor, JDOM, J2ME, AJAX, Ant, Oracle, PL/SQL, MVC, design patterns, SoapUi, Toad, Eclipse, Apache Tomcat, iReport, Adobe Illustrator, CVS, SVN, SSh Secure Shell Client, Target Process and Agile.
-   \item 	Designed and implemented workflow for BPM processes, Use case and Database schema Web Services, adapter, and gateway implementation for different new features. I also participated in peer programming and code review for team members. 
-   \item 	Provided post-release support for other clients of m-commerce in all instances, including training where necessary; Provided emergency troubleshooting for customer
-   \item 	 Collaborated with distributed team members over Ireland, India and Bangladesh to define product coding standards, system and internationalization requirements;
-
-
-\end{itemize}
-
-
-\section*{Books}
-\begin{itemize}
-    \item \textbf{Book:} \emph{Hybrid Cloud Infrastructure and Operations Explained}, Packt Publishing, 2022.
-    \item \textbf{Book:} \emph{Mastering AI Platforms: From Setup to Advanced Operations}, Leanpub, 2024.
-    \item \textbf{Book:} \emph{Emergence of Agentic AI: Architecting the Next Generation of Intelligent Systems}, Leanpub, 2024.
-\end{itemize}
-
-\subsubsection{Book chapters}\label{book-chapters}
-
-\begin{enumerate}
-  %%%%%\leftskip-0.25in % for bullets
-  \leftskip-0.13in % for numbers
-  \item \textbf{Habiba, M}., \& Akter, S. (2018). Exploring Cloud-Based Distributed Disaster Management With Dynamic Multi-Agents Workflow System,Smart Technologies for Emergency Response and Disaster Management. (pp. 167-195). IGI Global.
-\end{enumerate}
-
-
-\vspace{0.3cm}
-
-\subsection{Patents}
-
-\begin{itemize}
-    \item WO2023105384A1 - Blockchain clock for storing event data - IBM
-    \item WO2023072443A1 - Workload migration - Kyndryl, Inc.
-    \item US20230088588A1 - Security as a service for machine learning - IBM
-    \item US20240161000A1 - Artificial intelligence-based sustainability control - IBM
-    \item US11902331B2 - Request authorization - IBM
-    \item US20230205829A1- Recommending and performing personalized component arrangements -Kyndryl, Inc.
-    \item Filed - A method for applying and enforcing location-aware, automatic data governance/regulatory controls on edge nodes - IBM
-    \item Filed - No-Code solution deployment based on Natural Language Processing, Recommendation Knowledge and Infrastructure as a Code - IBM 
-    \item Filed - A Method and System for Real-Time Adjustment of Regulatory Policies, controls and Deployment Pattern - IBM 
-    \item Filed - Dual quantum recurrent neural network system with attention for time series prediction - IBM
-\end{itemize}
-
-
-\subsection{Publications}\label{publications}
-
-%%\emph{Preprint URLs available at
-%%\url{http://orcid.org/0000-0003-3582-9866}}\\
-\subsubsection{Journals}\label{journals}
-
-\begin{enumerate}
-  %%%%%\leftskip-0.25in % for bullets
-  \leftskip-0.13in % for numbers
-  \item \textbf{Habiba, M}.; Islam, Md R.; Ali, ABM S.; (2018). A component based unified architecture for utility service in cloud , Future Generation Computer Systems, vol. 87, (pp. 725--742). DOI: \href{https://doi.org/10.1016/j.future.2017.10.017}{10.1016/j.future.2017.10.017}
-  %%%
-  \item \textbf{Habiba, M}.;  Islam, Md R.;  Ali, ABM S.; Islam, Md Z.; (2016). A New Approach to Access Control in Cloud,  Arabian Journal for Science and Engineering, vol. 41, issue. 3, (pp. 1015--1030), Springer, Berlin, Heidelberg. DOI: \href{https://doi.org/10.1007/s13369-015-1947-8}{10.1007/s13369-015-1947-8}
-  
-   \item Islam, Md R.;  \textbf{Habiba, M}. (2014). Data Intensive Dynamic Scheduling Model and Algorithm for Cloud Computing Security , Journal of Computers Program (JCP), vol. 9 issue. 8, (pp. 1796--1808). DOI: \href{https://doi.org/10.4304/jcp.9.8.1796-1808 }{10.4304/jcp.9.8.1796-1808 }
-\end{enumerate}
-
-\subsubsection{Conferences}\label{conferences}
-
-\begin{enumerate}
-  %%%%%\leftskip-0.25in % for bullets
-  \leftskip-0.13in % for numbers
-  
-   \item \textbf{Habiba, M}; Pearlmutter, BM; (2020). Neural ODEs for Informative Missingness in Multivariate Time Series, Irish Signal and System Conference, 2020 ; ISSC2020; 
-  
-  \item \textbf{Habiba, M}; Pearlmutter, BM; (2020). Neural Ordinary Differential Equation based Recurrent Neural Network Model, Irish Signal and System Conference, 2020 ; ISSC2020;
-  \item Islam, Md R.; \textbf{Habiba, M}. \& Kashem, Mir I. I.; (2017). A framework for providing security to Personal Healthcare Records, international conference on networking, systems and security (NSysS) (pp. 168--173). DOI: \href{https://doi.org/10.1109/nsyss.2017.7885820 }{10.1109/nsyss.2017.7885820}
-  
-  
-   \item \textbf{Habiba, M}.; \& Islam, Md R.; Ali, ABM S.; (2015). Access control management as a service for NoSQL big data, Asia-Pacific World Congress on Computer Science and Engineering (APWC on CSE), (pp. 1--7). DOI: \href{https://doi.org/10.1109/apwccse.2015.7476244 }{10.1109/apwccse.2015.7476244}
-  
-   \item \textbf{Habiba, M}.; \& Islam, Md R.; Ali, ABM S.; (2014). A unified architecture for utility service in cloud, Asia-Pacific World Congress on Computer Science and Engineering (APWC on CSE), (pp. 1--8). DOI: \href{https://doi.org/10.1109/apwccse.2014.7053848 }{10.1109/apwccse.2014.7053848}
- 
-  \item Opu, Md F.R.; Biswas, E. ; \textbf{Habiba, M}.;Kim, C.; (2013). Architecture of a context aware framework for automated mobile device configuration, International Conference on Grid and Pervasive Computing, (pp. 299--308). DOI: {https://doi.org/10.1007/978-3-642-38027-3\_32  }{10.1007/978-3-642-38027-3\_32}
- 
- \item \textbf{Habiba, M}.; \& Islam, Md R.; Ali, ABM S.; (2013). Access control management for cloud, 12 $^{th}$ IEEE International Conference on Trust, Security and Privacy in Computing and Communications, (pp. 485--492). DOI: \href{https://doi.org/10.1109/trustcom.2013.61 }{10.1109/trustcom.2013.61 }
-
-  \item \textbf{Habiba, M}.; \& Akhter, S.; (2013). A cloud based natural disaster management system, International Conference on Grid and Pervasive Computing, (pp. 152--161), Springer, Berlin, Heidelberg. DOI: \href{https://doi.org/10.1007/978-3-642-38027-3\_16  }{10.1007/978-3-642-38027-3\_16}
-   
-   \item Islam, Md R.; \textbf{Habiba, M}.; (2012). Dynamic scheduling approach for data-intensive cloud environment, International Conference on Cloud Computing Technologies. Applications and Management (ICCCTAM), (pp. 179--185). DOI: \href{ https://doi.org/10.1109/iccctam.2012.6488094  }{10.1109/iccctam.2012.6488094}
-  
-  
-  \item \textbf{Habiba, M}.; \& Akhter, S.; (2012). MAS workflow model and scheduling algorithm for disaster management system, International Conference on Cloud Computing Technologies. Applications and Management (ICCCTAM), (pp. 164--173). DOI: \href{https://doi.org/10.1109/iccctam.2012.6488092 }{10.1109/iccctam.2012.6488092}
-
-    \item Islam, Md R.; \textbf{Habiba, M}.; (2012). Collaborative swarm intelligence based Trusted Computing, International Conference on Informatics, Electronics \& Vision (ICIEV) (pp. 1--6). DOI: \href{https://doi.org/10.1109/iciev.2012.6317341  }{10.1109/iciev.2012.6317341 }
-
- \item \textbf{Habiba, M}.; (2012). Metrics for evaluating agent oriented software engineering model, International Conference on Informatics, Electronics \& Vision (ICIEV), (pp. 17--22). DOI: \href{ https://doi.org/10.1109/iciev.2012.6317459 }{10.1109/iciev.2012.6317459 }
- 
-  \item Islam, Md R. \textbf{Habiba, M}.,(2012). Agent based framework for providing security to data storage in cloud, 15$^{th}$ International Conference on Computer and Information Technology (ICCIT) (pp. 49--58). DOI: \href{https://doi.org/10.1109/iccitechn.2012.6509712 }{10.1109/iccitechn.2012.6509712 }
-
-\end{enumerate}
-
-
-
- \subsubsection{ Public Talk / Presentation}\label{theses-and-dissertations}
-
- \begin{enumerate}
-  %%%%%\leftskip-0.25in % for bullets
-  \leftskip-0.13in % for numbers
-   \item \textbf{Habiba, M.}. (2019). Deep learning with PyTorch. PyLadies Meetup Group. Dublin, Ireland. Presentation Available on \href{https://github.com/mansura-habiba/meetup/tree/master/PyLadies_Dublin_2019}{Github}.
-   \item \textbf{Habiba, M}. \& Li, Y. (2015). Social Analytic using NodeJs + R. Nodejs Meetup Group. Dublin, Ireland. Presentation Available on \href{https://github.com/mansura-habiba/meetup/blob/master/Nodejs_meetup_dublin.pptx}{Github}.
-\end{enumerate}
-
-
-
-
-\section*{Certifications}
-\begin{itemize}
-    \item Open Group Certified Distinguished Architect
-    \item IBM Certified Solution Architect - Cloud Platform V4
-    \item IBM Certified Developer - Watson v4
-    \item IBM Certified Solution Architect - Cloud Pak for Automation v20.0.1
-    \item IBM Certification Exam Developer 2020 - Level I
-    \item OMG-Certified UML Professional Fundamental
-    \item Oracle Certified Programmer, Java SE 7 Programmer
-    \item Oracle Certified Associate, Java SE 7 Programmer
-\end{itemize}    
-
-\subsection{References}
-Available upon request.
+\section*{Writing and Research}
+Books include \emph{Hybrid Cloud Infrastructure and Operations Explained} (Packt, 2022), \emph{Emergence of Agentic AI} (2025), \emph{Recent Trends in Modelling Continuous Time Series Using Deep Learning} (Springer, 2026), and \emph{Accountable Knowledge Architecture for Enterprise AI} (2026). Research and invention work spans deep learning, secure distributed systems, cloud infrastructure, and trustworthy AI. Review individual records at \href{https://mansura-habiba.github.io/publications}{publications} and Google Scholar.
 \end{document}

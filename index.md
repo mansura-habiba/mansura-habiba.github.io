@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Mansura Habiba — AI &amp; HPC Architect
+title: Mansura Habiba — Enterprise AI, Security & HPC Platform Architect
 description: >-
-  Personal site for Mansura Habiba, Ph.D. — Principal Platform Architect for AI and HPC platforms at IBM. Writing on agentic AI security, hybrid cloud, and high-performance computing.
+  Mansura Habiba, Ph.D. — Principal Architect for agentic cross-product SaaS platforms at IBM, and former technical owner of large-scale x86-64 compute infrastructure, with a focus on security, resilience and governance.
 sidebar: false
 aside: false
 outline: false
@@ -19,21 +19,10 @@ outline: false
 
 <PostList :limit="6" class="post-list--home" />
 
-<div class="section-header">
-  <h2>Elsewhere on this site</h2>
-</div>
+<div class="section-header"><h2>Elsewhere on this site</h2></div>
 
 <div class="card-grid">
-  <a class="card" href="/book">
-    <h3 style="font-family: var(--vp-font-family-display); margin: 0 0 .4rem;">Books</h3>
-    <p style="margin: 0; color: var(--vp-c-text-2); font-size: .95rem;">Four published titles on accountable enterprise knowledge, agentic AI, continuous-time deep learning, and hybrid cloud.</p>
-  </a>
-  <a class="card" href="/publications">
-    <h3 style="font-family: var(--vp-font-family-display); margin: 0 0 .4rem;">Publications &amp; patents</h3>
-    <p style="margin: 0; color: var(--vp-c-text-2); font-size: .95rem;">Journals, conference papers, twelve filed patents, and selected talks.</p>
-  </a>
-  <a class="card" href="/about">
-    <h3 style="font-family: var(--vp-font-family-display); margin: 0 0 .4rem;">About</h3>
-    <p style="margin: 0; color: var(--vp-c-text-2); font-size: .95rem;">A short bio, contact details, and a link to the full CV.</p>
-  </a>
+  <a class="card" href="/book"><h3>Books</h3><p>Books on accountable enterprise knowledge, agentic AI, continuous-time deep learning, and hybrid cloud.</p></a>
+  <a class="card" href="/publications"><h3>Publications &amp; patents</h3><p>Research papers, patent filings, and selected talks.</p></a>
+  <a class="card" href="/about"><h3>About</h3><p>Professional background and current CV.</p></a>
 </div>
