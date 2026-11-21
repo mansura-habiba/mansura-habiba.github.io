@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Mansura Habiba — Enterprise AI & HPC Platform Architect
+title: Mansura Habiba — Enterprise AI, Security & HPC Platform Architect
 description: >-
-  Mansura Habiba, Ph.D. — Principal Architect for agentic cross-product SaaS platforms at IBM, formerly Principal Platform Architect for large-scale AI and HPC infrastructure.
+  Mansura Habiba, Ph.D. — Principal Architect for agentic cross-product SaaS platforms at IBM, and former technical owner of large-scale x86-64 compute infrastructure, with a focus on security, resilience and governance.
 sidebar: false
 aside: false
 outline: false
