@@ -16,7 +16,7 @@ I'm **Mansura Habiba, Ph.D.**, a Principal Architect at IBM Software in Dublin, 
 
 My current work includes enterprise AI/tool gateways, multi-tenant platform architecture, secure execution boundaries, and distributed agent orchestration. Previously, I was Principal Platform Architect for an enterprise compute estate exceeding 20,000 x86-64 systems at a Fortune 100 financial-services client, focusing on resilience, automation, and hybrid infrastructure.
 
-My background spans engineering, platform architecture, technical leadership, and scientific research. I provided technical direction across a global engineering group of 45 engineers. The distinction between technical leadership and direct line-management responsibilities matters in assessing that experience.
+My background spans engineering, platform architecture, technical leadership, and scientific research. I held organisational responsibility for a globally distributed engineering group of 45 engineers, including hiring authority, performance management and engineering delivery oversight, without having direct line reports. I was the technical owner for the platform and a key decision-maker for technology investments and unit economics, although I did not hold annual budget accountability.
 
 I earned a **Ph.D. in Deep Learning from Maynooth University (2022)** and hold **The Open Group Distinguished Architect, Level 3 (2024)** credential. My academic interests include continuous-time deep learning, enterprise AI trust, and the operational reliability of autonomous systems.
 
