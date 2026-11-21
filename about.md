@@ -1,8 +1,8 @@
 ---
 layout: page
-title: About
+title: About Mansura Habiba
 description: >-
-  About Mansura Habiba — Principal Platform Architect for AI and HPC at IBM, with a Ph.D. in deep learning and twelve filed patents.
+  Principal Architect at IBM Software focused on agentic enterprise AI platforms, with prior leadership in large-scale HPC infrastructure.
 sidebar: false
 aside: false
 outline: false
@@ -12,60 +12,28 @@ outline: false
 
 # About
 
-Senior enterprise security &amp; AI platform architect — based in Dublin, Ireland.
+I'm **Mansura Habiba, Ph.D.**, a Principal Architect at IBM Software in Dublin, working on agentic cross-product SaaS platforms, governed tool access, and multi-model AI infrastructure.
 
-<div class="about-grid">
-  <div class="about-photo">
-    <img src="/images/mansura.png" alt="Mansura Habiba" />
-  </div>
-  <div class="about-info">
-    <p>
-      I'm <strong>Mansura Habiba, Ph.D.</strong> — Principal Platform Architect for AI and
-      High-Performance Computing platforms at <a href="https://www.ibm.com/" target="_blank" rel="noopener">IBM</a>,
-      based in Dublin. I design and operate the platforms that make large AI and HPC workloads run safely,
-      cheaply, and predictably inside enterprises.
-    </p>
-    <p>
-      My research and engineering focus is on the unglamorous half of AI: the chain-of-custody, security
-      boundaries, scheduling, and operational guardrails that decide whether a system survives the move
-      from a notebook to production. I draw a lot of my intuition from how aviation, healthcare, and
-      nuclear industries handle high-stakes failure — fields that figured out blameless post-mortems and
-      defence-in-depth long before software did.
-    </p>
-  </div>
-</div>
+My current work includes enterprise AI/tool gateways, multi-tenant platform architecture, secure execution boundaries, and distributed agent orchestration. Previously, I was Principal Platform Architect for an enterprise compute estate exceeding 20,000 x86-64 systems at a Fortune 100 financial-services client, focusing on resilience, automation, and hybrid infrastructure.
 
-## What I work on
+My background spans engineering, platform architecture, technical leadership, and scientific research. I provided technical direction across a global engineering group of 45 engineers. The distinction between technical leadership and direct line-management responsibilities matters in assessing that experience.
 
-Day to day I'm building agentic AI platforms, hybrid-cloud reference architectures, and the security fabric around them. Recurring themes in my writing and research:
+I earned a **Ph.D. in Deep Learning from Maynooth University (2022)** and hold **The Open Group Distinguished Architect, Level 3 (2024)** credential. My academic interests include continuous-time deep learning, enterprise AI trust, and the operational reliability of autonomous systems.
 
-- **Agentic AI security** — runtime sandboxing, identity, and the chain-of-custody problem for AI agents.
-- **Hybrid &amp; multi-cloud architecture** — IBM Cloud / Red Hat / OpenShift, edge-to-cloud workload migration.
-- **High-performance computing for AI** — large-model training infrastructure and operational economics.
-- **Deep-learning research** — neural ODEs and continuous-time models for time-series with informative missingness.
+## Current focus
 
-## Background
+- **Agentic infrastructure** — MCP tool gateways, multi-model routing, runtime governance, and identity-aware delegation.
+- **Large-scale computing** — enterprise HPC architecture, compute resilience, platform automation, and operational design.
+- **Accountable AI** — provenance, policy, evidence-based decision-making, and failure engineering.
+- **Research and writing** — publications and books in AI, cloud infrastructure, and distributed systems.
 
-I hold a **Ph.D. in deep learning** (Maynooth University, supervised by Prof. Barak Pearlmutter), with research on neural ordinary differential equations for time-series data. I've published three books — most recently *Emergence of Agentic AI* (Leanpub, 2025) — and have **twelve filed patents** spanning blockchain, quantum, edge computing, sustainability, and generative AI.
+## CV and work
 
-I also serve as a reviewer and editorial board member for several IEEE journals.
-
-## Full CV
-
-For the full work history, education, certifications, talks, and complete patent &amp; publication list, see the styled CV — kept here in its original layout:
-
-<p style="margin: 1.4rem 0 2.4rem;">
-  <a class="btn btn-primary" href="/cv.html">View the full CV →</a>
-  &nbsp;
-  <a class="btn btn-ghost" href="/cv.tex">Download LaTeX source</a>
-</p>
+[View current professional CV](/cv.html) · [LaTeX CV source](/cv.tex) · [Books](/book) · [Publications](/publications) · [Open source](/open-source)
 
 ## Contact
 
-The fastest way to reach me:
-
-- **LinkedIn** — [linkedin.com/in/mansura-h-a0174a19](https://www.linkedin.com/in/mansura-h-a0174a19)
-- **Google Scholar** — [scholar.google.com/citations?user=oee3rpwAAAAJ](https://scholar.google.com/citations?user=oee3rpwAAAAJ)
-- **Credly badges** — [credly.com/users/mansura-habiba/badges](https://www.credly.com/users/mansura-habiba/badges)
-
-I'm happy to hear from people working on agentic AI security, large-scale ML platforms, or the architecture work behind both. Cold pitches and recruiter spam, less so.
+- [LinkedIn](https://www.linkedin.com/in/mansura-h-a0174a19)
+- [GitHub](https://github.com/mansura-habiba)
+- [Google Scholar](https://scholar.google.com/citations?user=oee3rpwAAAAJ)
+- [Professional credentials](https://www.credly.com/users/mansura-habiba/badges)
